@@ -1,12 +1,15 @@
 <?php
 /**
- * Index file Silohon SEO Wordpress Theme
+ * Footer File
+ * 
+ * Silohon SEO Wordpress Theme
+ * 
  * @package silohon-seo
+ * 
  * @link https://github.com/akbarsilohon/silohon-seo.git
  */
 
-get_header();
+wp_footer(); ?>
 
-
-
-get_footer();
+</body>
+</html>
