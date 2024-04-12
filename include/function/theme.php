@@ -60,3 +60,55 @@ function sls_default_icon(){
     <link rel="apple-touch-icon" href="<?php echo esc_url( $defIcon ); ?>">
     <?php
 }
+
+// Render Organization Schema ==========
+// =====================================
+$og = get_option( 'sls_g_settings' )['og'];
+if( !empty( $og ) && $og === 'true' ){
+    add_action( 'wp_head', 'sls_render_organization_schema' );
+}
+
+function sls_render_organization_schema(){
+    $ogName = get_option( 'sls_g_settings' )['ogName'];
+    $ogUrl = get_option( 'sls_g_settings' )['ogUrl'];
+    $ogSameAs = get_option( 'sls_g_settings' )['ogSameAs'];
+    $ogImage = get_option( 'sls_g_settings' )['ogImage'];
+    $ogLogo = get_option( 'sls_g_settings' )['ogLogo'];
+    $ogDesc = get_option( 'sls_g_settings' )['ogDesc'];
+    $ogEmail = get_option( 'sls_g_settings' )['ogEmail'];
+    $ogTel = get_option( 'sls_g_settings' )['ogTel'];
+    $ogStreet = get_option( 'sls_g_settings' )['ogStreet'];
+    $ogLocality = get_option( 'sls_g_settings' )['ogLocality'];
+    $ogCountry = get_option( 'sls_g_settings' )['ogCountry'];
+    $ogRegion = get_option( 'sls_g_settings' )['ogRegion'];
+    $ogPostal = get_option( 'sls_g_settings' )['ogPostal'];
+    $ogVat = get_option( 'sls_g_settings' )['ogVat'];
+    $ogIso = get_option( 'sls_g_settings' )['ogIso']; ?>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "<?php echo $ogName; ?>",
+            "url": "<?php echo $ogUrl; ?>",
+            "sameAs": [ "<?php echo $ogSameAs; ?>" ],
+            "image": "<?php echo $ogImage; ?>",
+            "logo": "<?php echo $ogLogo; ?>",
+            "description": "<?php echo $ogDesc; ?>",
+            "email": "<?php echo $ogEmail; ?>",
+            "telephone": "<?php echo $ogTel; ?>",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "<?php echo $ogStreet; ?>",
+                "addressLocality": "<?php echo $ogLocality; ?>",
+                "addressCountry": "<?php echo $ogCountry; ?>",
+                "addressRegion": "<?php echo $ogRegion; ?>",
+                "postalCode": "<?php echo $ogPostal; ?>"
+            },
+            "vatID": "<?php echo $ogVat; ?>",
+            "iso6523Code": "<?php echo $ogIso; ?>"
+        }
+    </script>
+
+    <?php
+}
