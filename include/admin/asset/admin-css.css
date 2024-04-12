@@ -35,3 +35,20 @@
     color: #333;
     font-weight: 800;
 }
+.sls_form .multiInput{
+    margin-top: -5px;
+}
+button#remove-sameas{
+    border: red;
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 40px;
+    margin-left: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+button#remove-sameas:hover{
+    background-color: #821616;
+}

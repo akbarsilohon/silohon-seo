@@ -112,6 +112,8 @@ add_action( 'admin_init', 'sls_admin_init' );
 function sls_admin_init(){
     require_once SLDIR . '/include/admin/handler/general-save.php';
     require_once SLDIR . '/include/admin/handler/article-save.php';
+    require_once SLDIR . '/include/admin/handler/ads-save.php';
+    require_once SLDIR . '/include/admin/handler/header-footer-save.php';
 }
 
 

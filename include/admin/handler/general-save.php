@@ -46,7 +46,7 @@ function sls_ogname_render(){
 }
 
 // Organization URL ----------
-add_settings_field( 'sls-ogurl', 'Organization URL', 'sls_ogurl_render', 'sls', 'sls-org' );
+add_settings_field( 'sls-ogurl', 'Website', 'sls_ogurl_render', 'sls', 'sls-org' );
 function sls_ogurl_render(){
     $ogUrl = get_option( 'sls_g_settings' )['ogUrl'];
     echo '<input type="url" name="sls_g_settings[ogUrl]" value="'. $ogUrl .'">';
@@ -55,24 +55,62 @@ function sls_ogurl_render(){
 // Organization SameAs ----------
 add_settings_field( 'sls-ogsameas', 'Social Media', 'sls_ogsameas_render', 'sls', 'sls-org' );
 function sls_ogsameas_render(){
-    $ogSameAs = get_option( 'sls_g_settings' )['ogSameAs'];
-    echo '<input type="text" name="sls_g_settings[ogSameAs]" value="'. $ogSameAs .'">';
+    $ogSameAs = get_option( 'sls_g_settings' )['ogSameAs']; ?>
+
+    <ul class="multiInput" id="multiInput">
+        <?php if( !empty($ogSameAs) ){
+            foreach( $ogSameAs as $same ){ ?>
+                <li class="listInput">
+                    <input type="url" name="sls_g_settings[ogSameAs]" value="<?php echo esc_attr( $same ); ?>" />
+                    <button type="button" id="remove-sameas">
+                        <span class="dashicons dashicons-trash"></span>
+                    </button>
+                </li>
+            <?php
+            }
+        } ?>
+    </ul>
+
+    <button class="button button-primary" type="button" id="add-sameas">
+        Add Url
+    </button>
+
+    <script>
+        jQuery(document).ready(function ($) {
+            $('#add-sameas').on('click', function () {
+                $('#multiInput').append(`
+                    <li class="listInput">
+                        <input type="text" name="sls_g_settings[ogSameAs][]">
+                        <button type="button" id="remove-sameas"><span class="dashicons dashicons-trash"></span></button>
+                    </li>
+                `);
+            });
+
+            $('#multiInput').on('click', '#remove-sameas', function () {
+                $(this).closest('.listInput').remove();
+            });
+        });
+    </script>
+
+    <?php
 }
 
 // Organization Image ----------
 add_settings_field( 'sls-ogimage', 'Image', 'sls_ogimage_render', 'sls', 'sls-org' );
 function sls_ogimage_render(){
     $ogImage = get_option( 'sls_g_settings' )['ogImage'];
+    $btnImg = !empty($ogImage) ? 'Change' : 'Upload';
     echo '<input type="url" name="sls_g_settings[ogImage]" value="'. $ogImage .'" id="ogImg"><br>';
-    echo '<button style="margin-top: 10px" id="ogImgChange" type="button" class="button button-primary">Change</button>';
+    echo '<button style="margin-top: 10px" id="ogImgChange" type="button" class="button button-primary">'.$btnImg.'</button>';
 }
 
 // Organization Logo ----------
 add_settings_field( 'sls-oglogo', 'Logo', 'sls_oglogo_render', 'sls', 'sls-org' );
 function sls_oglogo_render(){
     $ogLogo = get_option( 'sls_g_settings' )['ogLogo'];
+    $btLogo = !empty($ogLogo) ? 'Change' : 'Upload';
     echo '<input type="url" name="sls_g_settings[ogLogo]" value="'. $ogLogo .'" id="ogLogo"><br>';
-    echo '<button style="margin-top: 10px" id="ogLogoChange" type="button" class="button button-primary">Change</button>';
+    echo '<button style="margin-top: 10px" id="ogLogoChange" type="button" class="button button-primary">'.$btLogo.'</button>';
 }
 
 // Organization Description ----------
