@@ -1,7 +1,9 @@
 <?php
 /**
  * Root function Silohon SEO
+ * 
  * @package silohon-seo
+ * 
  * @link https://github.com/akbarsilohon/silohon-seo.git
  */
 
@@ -24,8 +26,14 @@ function SLPART( $filename ){
 // ==============================================
 require_once SLDIR . '/include/function/theme.php';
 require_once SLDIR . '/include/function/remove-action.php';
+require_once SLDIR . '/include/function/theme-script.php';
 
 
 // Admin function ===============================
 // ==============================================
 require_once SLDIR . '/include/admin/load.php';
+
+
+// Shortcode ====================================
+// ==============================================
+require_once SLDIR . '/include/code/shortcode.php';

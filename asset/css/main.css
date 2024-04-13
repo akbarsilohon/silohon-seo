@@ -1,0 +1,23 @@
+/*
+--main-color
+--bg-color
+--nav-bg
+--foo-bg
+--nav-link
+--nav-hover
+--p-color
+--p-link
+--p-hover
+--foo-text
+--foo-link
+--foo-hover
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
