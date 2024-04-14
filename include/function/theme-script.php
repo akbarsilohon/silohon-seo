@@ -28,4 +28,18 @@ function sls_wp_enqueue_scripts(){
     );
 
 
+    /**
+     * Main js for fronted
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */
+    wp_enqueue_script( 
+        'sls-main-js',
+        SLURI . '/asset/js/main.js',
+        [], fileatime( SLDIR . '/asset/js/main.js'),
+        true
+    );
+
 }

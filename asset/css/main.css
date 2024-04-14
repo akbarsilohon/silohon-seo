@@ -1,3 +1,221 @@
+@font-face {
+    font-family: 'Anton Regular';
+    src: url('../fonts/anton.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PT Serif';
+    src: url('../fonts/ptserif.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Oswald Regular';
+    src: url('../fonts/oswald.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'PT Serif', sans-serif;
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+img{
+    height: 0;
+    width: 0;
+}
+
+/* Header */
+.sls_header{
+    position: relative;
+    background-color: var(--nav-bg);
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all .5s;
+}
+.header_inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.inner_left{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.sls_open{
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.sls_open svg *{
+    width: 35px;
+    height: 35px;
+    stroke: var(--nav-link);
+}
+.sls_open:hover svg *{
+    stroke: var(--nav-hover);
+}
+.slsBrand .brandUrl .slsLogo{
+    width: auto;
+    height: 40px;
+}
+.inner_right{
+    width: 100%;
+    max-width: 400px;
+}
+.slsFormdesk{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+.slsFormdesk #slsInput_search_desk,
+.formMobile input[type="text"]{
+    width: 100%;
+    border: .5px solid var(--nav-link);
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+.slsFormdesk #slsInput_search_desk::placeholder,
+.formMobile input[type="text"]::placeholder{
+    color: #999;
+}
+.slsFormdesk #slsInput_search_desk:focus,
+.formMobile input[type="text"]:focus{
+    outline: .5px solid var(--nav-hover);
+    border: .5px solid var(--nav-hover);
+}
+.slsFormdesk .slsBtnSub,
+.formMobile .btnsearchMobile{
+    border: none;
+    background-color: var(--nav-link);
+    color: white;
+    padding: 5px 10px;
+    font-family: 'Oswald Regular';
+    letter-spacing: .4px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.5s ease-in-out;
+}
+.slsFormdesk .slsBtnSub:hover,
+.formMobile .btnsearchMobile:hover{
+    background-color: var(--nav-hover);
+}
+
+/* Menu Flexbox */
+.slsFlexbox.active{
+    transform: translate(0);
+}
+.slsFlexbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--nav-bg);
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    padding: 40px;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.5s ease-in-out;
+    transform: translate(-105%)
+}
+.slsFlexbox .flexHead{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: 'Oswald Regular';
+    margin-bottom: 1.5rem;
+}
+.flexBrand{
+    color: var(--nav-link);
+    cursor: pointer;
+}
+.slsClose{
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.slsClose:hover svg *{
+    fill: var(--nav-hover);
+}
+.slsClose svg *{
+    fill: var(--nav-link);
+    width: 25px;
+    height: 25px;
+}
+.flexSearch{
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    display: none;
+}
+.formMobile{
+    display: flex;
+    gap: 10px;
+}
+
+/* Menu nav */
+.slsMenu{
+    list-style: none;
+    font-family: 'Oswald Regular';
+}
+.slsMenu li{
+    margin: 10px 0;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid var(--nav-hover);
+    width: max-content;
+    transition: all .5s;
+}
+.slsMenu li .menu-link.active{
+    color: var(--nav-hover);
+}
+.slsMenu li a{
+    color: var(--nav-link);
+    text-decoration: none;
+}
+.slsMenu li a:hover {
+    color: var(--nav-hover);
+    transition: all .5s;
+}
+.slsMenu .menu-item-has-children {
+    border-bottom: none;
+}
+.slsMenu .menu-item-has-children .menu-link.active {
+    color: var(--nav-hover);
+}
+.sub-menu {
+    margin-top: 1rem;
+    list-style: none;
+}
+.slsMenu .sub-menu li::before {
+    content: '\21E2 ';
+    margin-right: 5px
+}
+
 /*
 --main-color
 --bg-color
@@ -12,12 +230,3 @@
 --foo-link
 --foo-hover
 */
-
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    overflow-x: hidden;
-}
