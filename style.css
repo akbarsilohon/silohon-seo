@@ -13,3 +13,33 @@
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 ========================================================== */
+
+:root{
+  /* Body */
+  --bg-color: #ffffff;
+
+  /* Header */
+  --header-bg: #ffffff;
+  --header-link: #000000;
+  --header-hover: #e81010;
+
+  /* Posts */
+  --post-judul: #000000;
+  --post-judul-hover: #e81010;
+  --post-meta: #e81010;
+  --post-excerpt: #666666;
+
+  /* Article */
+  --article-heading: #000000;
+  --article-text: #666666;
+  --article-link: #e81010;
+  --article-hover: #ff0000;
+
+  /* Footer */
+  --foo-top-bg: #333333;
+  --foo-top-link: #ffffff;
+  --foo-top-hover: #999999;
+  --foo-bot-bg: #000000;
+  --foo-bot-text: #ffffff;
+  --foo-bot-link: #e81010;
+}

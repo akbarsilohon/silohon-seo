@@ -17,19 +17,20 @@ const menuOpen = document.getElementById('slsOpen');
 const menuFlex = document.getElementById('slsFlexbox');
 const menuClose = document.getElementById('slsClose');
 
-// Cek apakah ada status menu di localStorage
-if (localStorage.getItem('menuStatus') === 'open') {
-    menuFlex.classList.add('active');
-}
-
 menuOpen.addEventListener('click', function(){
     menuFlex.classList.add('active');
-    // Simpan status menu di localStorage
-    localStorage.setItem('menuStatus', 'open');
 });
 
 menuClose.addEventListener('click', function(){
     menuFlex.classList.remove('active');
-    // Hapus status menu dari localStorage
-    localStorage.removeItem('menuStatus');
+});
+
+
+// Header fixed ======================
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 100 ) {
+        document.querySelector('.sls_header').classList.add('scrolling');
+    } else {
+        document.querySelector('.sls_header').classList.remove('scrolling');
+    }
 });

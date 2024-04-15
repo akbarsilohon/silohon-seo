@@ -27,6 +27,22 @@ function sls_wp_enqueue_scripts(){
         'all'
     );
 
+    /**
+     * Homepage Css Silohon SEO Wordpress Theme
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */
+    if( is_home() ){
+        wp_enqueue_style( 
+            'sls-home-style', 
+            SLURI . '/asset/css/home.css',
+            array(), fileatime( SLDIR . '/asset/css/home.css'),
+            'all'
+        );
+    }
+
 
     /**
      * Main js for fronted

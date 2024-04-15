@@ -26,7 +26,11 @@
             ?>
         </div>
     </div>
-    <div class="fooBot"></div>
+    <div class="fooBot">
+        <div class="ncopy container">
+            &copy; <?php echo date("Y"); ?> <a href="<?php echo bloginfo( 'url' ); ?>"><?php echo bloginfo( 'name' ); ?></a> | All Rights Reserved.
+        </div>
+    </div>
 </footer>
 
 <?php

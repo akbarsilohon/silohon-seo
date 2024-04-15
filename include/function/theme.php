@@ -112,3 +112,111 @@ function sls_render_organization_schema(){
 
     <?php
 }
+
+
+// Replace Sparator Title ====================
+// ===========================================
+add_filter( 'document_title_separator', 'sls_document_title_separator' );
+function sls_document_title_separator( $sep ) {
+    $sep = '|';
+    return $sep;
+}
+
+// Check thumbnails ==========================
+// ===========================================
+function sls_check_thumbnails( $post_id ){
+    if( has_post_thumbnail( $post_id )){
+        return 'sls-with-thumbnail';
+    } else{
+        return 'sls-without-thumbnail';
+    }
+}
+
+
+// Categoty replace output ====================
+// ============================================
+// using link
+function sls_cat_with_link(){
+    $categories = get_the_category();
+    $sparator = ', ';
+    $output = '';
+    $i = 1;
+
+    if(!empty($categories)){
+        foreach( $categories as $category ){
+            if( $i > 1 ){
+                $output .= $sparator;
+            }
+
+            $output = '<a class="slsCatlink" href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
+        }
+    }
+
+    echo $output;
+}
+
+// Without link
+function sls_cat_without_link(){
+    $categories = get_the_category();
+    $sparator = ', ';
+    $output = '';
+    $i=1;
+    if( !empty($categories) ) :
+        foreach( $categories as $category ) :
+            if($i > 1 ) : $output .= $sparator; endif;
+            $output = $category->name;
+            $i++;
+        endforeach;
+    endif;
+    echo $output;
+}
+
+
+/**
+ * The Excerpt Silohon SEO Wordpress Theme
+ * 
+ * @package silohon-seo
+ * 
+ * @link https://github.com/akbarsilohon/silohon-seo.git
+ */
+// Render count the Excerpt lengkth ================
+add_filter( 'excerpt_length', 'sls_excerpt_length' );
+function sls_excerpt_length(){
+    $excerptLength = !empty( get_option('sls_article_settings')['excertpt-length'] ) ? get_option('sls_article_settings')['excertpt-length'] : 25;
+    return $excerptLength;
+}
+
+// Add class to the excerpt ========================
+add_filter( 'the_excerpt', 'sls_add_excerpt_class' );
+function sls_add_excerpt_class() {
+    return '<p class="slsexcerpt">' . get_the_excerpt() . '</p>';
+}
+
+
+// Excerpt More ====================================
+add_filter( 'excerpt_more', 'sls_excerpt_more' );
+function sls_excerpt_more( $more ){
+    $excerptMore = !empty(get_option('sls_article_settings')['excertpt-more']) ? get_option('sls_article_settings')['excertpt-more'] : 'Read More';
+    return sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+        esc_url( get_permalink( get_the_ID() ) ),
+        $excerptMore
+    );
+}
+
+
+/**
+ * Widgets Silohon SEO Wordpress Theme
+ * 
+ * @package silohon-seo
+ * 
+ * @link https://github.com/akbarsilohon/silohon-seo.git
+ */
+add_action( 'widgets_init', 'sls_widget_init' );
+function sls_widget_init(){
+    register_sidebar(
+        array(
+            'id'        =>  'home',
+            'name'      =>  esc_html__( 'Home Sidebar', 'silohon-seo' )
+        )
+    );
+}

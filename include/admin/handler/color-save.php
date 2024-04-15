@@ -10,131 +10,241 @@
  */
 
 
-add_settings_section( 'sls-color-section', null, null, 'sls-color' );
+add_settings_section( 'sls-color-1', null, null, 'sls-color' );
 add_settings_section( 'sls-color-2', '<h2 class="slsSection">Header</h2>', null, 'sls-color' );
-add_settings_section( 'sls-color-3', '<h2 class="slsSection">Single Post</h2>', null, 'sls-color' );
-add_settings_section( 'sls-color-4', '<h2 class="slsSection">Footer Color</h2>', null, 'sls-color' );
+add_settings_section( 'sls-color-3', '<h2 class="slsSection">Posts</h2>', null, 'sls-color' );
+add_settings_section( 'sls-color-4', '<h2 class="slsSection">Article</h2>', null, 'sls-color' );
+add_settings_section( 'sls-color-5', '<h2 class="slsSection">Footer</h2>', null, 'sls-color' );
 register_setting( 'sls-color-group', 'sls_color' );
 
+/**
+ * Main Color Setting
+ * 
+ * @package silohon-seo
+ * 
+ * @link https://github.com/akbarsilohon/silohon-seo.git
+ */
+add_settings_field( 'sls-bg', 'Body Background: ', function(){
 
-// Main color =============================
-add_settings_field( 'sls-main-color', 'Main Color: ', function(){
+    $options = get_option('sls_color')['body-background'];
+    $color = !empty($options) ? $options : '#ffffff';
 
-    $main = get_option('sls_color')['main'];
-    $mainColor = !empty($main) ? $main : '#e74b2c';
-    echo '<input type="color" name="sls_color[main]" value="'. $mainColor .'"/>';
+    echo '<input type="color" name="sls_color[body-background]" value="'. $color .'"/>';
 
-}, 'sls-color', 'sls-color-section' );
-
-
-// Backgroud Color =========================
-add_settings_field( 'sls-bg-color', 'Backgoud Color: ', function(){
-
-    $bg = get_option('sls_color')['bakgroud'];
-    $backgroundColor = !empty( $bg ) ? $bg : '#ffffff';
-    echo '<input type="color" name="sls_color[bakgroud]" value="'. $backgroundColor .'"/>';
-
-}, 'sls-color', 'sls-color-section' );
+}, 'sls-color', 'sls-color-1');
 
 
+/**
+ * Header Color Settings
+ * 
+ * @package silohon-seo
+ * 
+ * @link https://github.com/akbarsilohon/silohon-seo.git
+ */
 
-// Navbar Background ========================
-add_settings_field( 'sls-nav-bg', 'Header Backgroud: ', function(){
+// --header-bg: #ffffff; ==============================
+add_settings_field( 'sls-header-bg', 'Background: ', function(){
 
-    $navBg = get_option('sls_color')['nav-bg'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#ffffff';
-    echo '<input type="color" name="sls_color[nav-bg]" value="'. $navBgColor .'"/>';
+    $options = get_option('sls_color')['header-bg'];
+    $color = !empty( $options ) ? $options : '#ffffff';
 
-}, 'sls-color', 'sls-color-2' );
+    echo '<input type="color" name="sls_color[header-bg]" value="'. $color .'"/>';
 
-
-// Navbar Link ========================
-add_settings_field( 'sls-nav-link', 'Navbar Link Color: ', function(){
-
-    $navBg = get_option('sls_color')['nav-link'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#e74b2c';
-    echo '<input type="color" name="sls_color[nav-link]" value="'. $navBgColor .'"/>';
-
-}, 'sls-color', 'sls-color-2' );
+}, 'sls-color', 'sls-color-2');
 
 
-// Navbar Hover ========================
-add_settings_field( 'sls-nav-hover', 'Navbar Link Hover: ', function(){
+// --header-link: #000000; ============================
+add_settings_field( 'sls-header-link', 'Link: ', function(){
 
-    $navBg = get_option('sls_color')['nav-hover'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#f5866f';
-    echo '<input type="color" name="sls_color[nav-hover]" value="'. $navBgColor .'"/>';
+    $options = get_option('sls_color')['header-link'];
+    $color = !empty( $options ) ? $options : '#000000';
 
-}, 'sls-color', 'sls-color-2' );
+    echo '<input type="color" name="sls_color[header-link]" value="'. $color .'"/>';
 
-
-
-// Text Paragraf ========================
-add_settings_field( 'sls-p-text', 'Paragraf Color: ', function(){
-
-    $navBg = get_option('sls_color')['p-text'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#606060';
-    echo '<input type="color" name="sls_color[p-text]" value="'. $navBgColor .'"/>';
-
-}, 'sls-color', 'sls-color-3' );
+}, 'sls-color', 'sls-color-2');
 
 
-// Text Paragraf ========================
-add_settings_field( 'sls-p-link', 'Link in Paragraf: ', function(){
+// --header-hover: #e81010; ===========================
+add_settings_field( 'sls-header-hover', 'Hover: ', function(){
 
-    $navBg = get_option('sls_color')['p-link'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#e74b2c';
-    echo '<input type="color" name="sls_color[p-link]" value="'. $navBgColor .'"/>';
+    $options = get_option('sls_color')['header-hover'];
+    $color = !empty( $options ) ? $options : '#e81010';
 
-}, 'sls-color', 'sls-color-3' );
+    echo '<input type="color" name="sls_color[header-hover]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-2');
 
 
-// Text Paragraf ========================
-add_settings_field( 'sls-p-hover', 'Link Hover Paragraf: ', function(){
+/**
+ * Posts Color settings
+ * 
+ * @package silohon-seo
+ * 
+ * @link https://github.com/akbarsilohon/silohon-seo.git
+ */
+// --post-judul: #000000; ==============================
+add_settings_field( 'sls-post-judul', 'Title: ', function(){
 
-    $navBg = get_option('sls_color')['p-hover'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#e74b2c';
-    echo '<input type="color" name="sls_color[p-hover]" value="'. $navBgColor .'"/>';
+    $options = get_option('sls_color')['post-title'];
+    $color = !empty($options) ? $options : '#000000';
+
+    echo '<input type="color" name="sls_color[post-title]" value="'. $color .'"/>';
 
 }, 'sls-color', 'sls-color-3' );
 
 
-// Footer Bg ========================
-add_settings_field( 'sls-foo-bg', 'Footer Background: ', function(){
+// --post-judul-hover: #e81010; ========================
+add_settings_field( 'sls-post-hover', 'Hover: ', function(){
 
-    $navBg = get_option('sls_color')['foo-bg'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#000000';
-    echo '<input type="color" name="sls_color[foo-bg]" value="'. $navBgColor .'"/>';
+    $options = get_option('sls_color')['post-hover'];
+    $color = !empty($options) ? $options : '#e81010';
+
+    echo '<input type="color" name="sls_color[post-hover]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-3' );
+
+
+// --post-meta: #e81010; ===============================
+add_settings_field( 'sls-post-meta', 'Meta: ', function(){
+
+    $options = get_option('sls_color')['post-meta'];
+    $color = !empty($options) ? $options : '#e81010';
+
+    echo '<input type="color" name="sls_color[post-meta]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-3' );
+
+
+// --post-excerpt: #666666; ============================
+add_settings_field( 'sls-post-excerpt', 'Excerpt: ', function(){
+
+    $options = get_option('sls_color')['post-excerpt'];
+    $color = !empty($options) ? $options : '#666666';
+
+    echo '<input type="color" name="sls_color[post-excerpt]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-3' );
+
+
+/**
+ * Article Color settings
+ * 
+ * @package silohon-seo
+ * 
+ * @link https://github.com/akbarsilohon/silohon-seo.git
+ */
+// --article-heading: #000000; =========================
+add_settings_field( 'sls-article-heading', 'Heading: ', function(){
+
+    $options = get_option('sls_color')['article-heading'];
+    $color = !empty($options) ? $options : '#000000';
+
+    echo '<input type="color" name="sls_color[article-heading]" value="'. $color .'"/>';
 
 }, 'sls-color', 'sls-color-4' );
 
 
+// --article-text: #666666; ============================
+add_settings_field( 'sls-article-text', 'Text: ', function(){
 
-// Footer text ========================
-add_settings_field( 'sls-foo-text', 'Footer Text: ', function(){
+    $options = get_option('sls_color')['article-text'];
+    $color = !empty($options) ? $options : '#666666';
 
-    $navBg = get_option('sls_color')['foo-text'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#ffffff';
-    echo '<input type="color" name="sls_color[foo-text]" value="'. $navBgColor .'"/>';
-
-}, 'sls-color', 'sls-color-4' );
-
-
-// Footer Link ========================
-add_settings_field( 'sls-foo-link', 'Footer Link: ', function(){
-
-    $navBg = get_option('sls_color')['foo-link'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#e74b2c';
-    echo '<input type="color" name="sls_color[foo-link]" value="'. $navBgColor .'"/>';
+    echo '<input type="color" name="sls_color[article-text]" value="'. $color .'"/>';
 
 }, 'sls-color', 'sls-color-4' );
 
 
-// Footer Link ========================
-add_settings_field( 'sls-foo-hover', 'Link Hover: ', function(){
+// --article-link: #e81010; ============================
+add_settings_field( 'sls-article-link', 'Link: ', function(){
 
-    $navBg = get_option('sls_color')['foo-hover'];
-    $navBgColor = !empty( $navBg ) ? $navBg : '#e74b2c';
-    echo '<input type="color" name="sls_color[foo-hover]" value="'. $navBgColor .'"/>';
+    $options = get_option('sls_color')['article-link'];
+    $color = !empty($options) ? $options : '#e81010';
+
+    echo '<input type="color" name="sls_color[article-link]" value="'. $color .'"/>';
 
 }, 'sls-color', 'sls-color-4' );
+
+
+// --article-hover: #ff0000; ===========================
+add_settings_field( 'sls-article-hover', 'Hover: ', function(){
+
+    $options = get_option('sls_color')['article-hover'];
+    $color = !empty($options) ? $options : '#ff0000';
+
+    echo '<input type="color" name="sls_color[article-hover]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-4' );
+
+
+/**
+ * Footer Color settings
+ * 
+ * @package silohon-seo
+ * 
+ * @link https://github.com/akbarsilohon/silohon-seo.git
+ */
+// --foo-top-bg: #333333; ==============================
+add_settings_field( 'sls-foo-top-bg', 'Top Background: ', function(){
+
+    $options = get_option('sls_color')['foo-top-bg'];
+    $color = !empty($options) ? $options : '#333333';
+
+    echo '<input type="color" name="sls_color[foo-top-bg]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-5' );
+
+
+// --foo-top-link: #ffffff; ============================
+add_settings_field( 'sls-foo-top-link', 'Top Link: ', function(){
+
+    $options = get_option('sls_color')['foo-top-link'];
+    $color = !empty($options) ? $options : '#ffffff';
+
+    echo '<input type="color" name="sls_color[foo-top-link]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-5' );
+
+
+// --foo-top-hover: #999999; ===========================
+add_settings_field( 'sls-foo-top-hover', 'Top Hover: ', function(){
+
+    $options = get_option('sls_color')['foo-top-hover'];
+    $color = !empty($options) ? $options : '#999999';
+
+    echo '<input type="color" name="sls_color[foo-top-hover]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-5' );
+
+
+// --foo-bot-bg: #000000; ==============================
+add_settings_field( 'sls-foo-bot-bg', 'Bottom Background: ', function(){
+
+    $options = get_option('sls_color')['foo-bot-bg'];
+    $color = !empty($options) ? $options : '#000000';
+
+    echo '<input type="color" name="sls_color[foo-bot-bg]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-5' );
+
+
+// --foo-bot-text: #ffffff; ============================
+add_settings_field( 'sls-foo-bot-text', 'Bottom Text: ', function(){
+
+    $options = get_option('sls_color')['foo-bot-text'];
+    $color = !empty($options) ? $options : '#ffffff';
+
+    echo '<input type="color" name="sls_color[foo-bot-text]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-5' );
+
+
+// --foo-bot-link: #e81010; ============================
+add_settings_field( 'sls-foo-bot-link', 'Bottom Link: ', function(){
+
+    $options = get_option('sls_color')['foo-bot-link'];
+    $color = !empty($options) ? $options : '#e81010';
+
+    echo '<input type="color" name="sls_color[foo-bot-link]" value="'. $color .'"/>';
+
+}, 'sls-color', 'sls-color-5' );

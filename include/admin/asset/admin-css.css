@@ -24,9 +24,31 @@
 .sls_form input[type="text"],
 .sls_form input[type="url"],
 .sls_form input[type="email"],
-.sls_form input[type="tel"]{
+.sls_form input[type="tel"],
+.sls_form input[type="number"]{
     width: 100%;
     max-width: 400px;
+}
+.sls_form input[type="color"]{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+.sls_form input[type="color"]::-webkit-color-swatch-wrapper {
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+}
+.sls_form input[type="color"]::-webkit-color-swatch {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333;
 }
 .sls_form textarea{
     width: 100%;

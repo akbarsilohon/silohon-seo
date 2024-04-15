@@ -58,7 +58,7 @@ function sls_general(){ ?>
 function sls_single_post(){ ?>
 
     <div class="sls_container">
-        <h1 class="sls_heading">Single Post Settings</h1>
+        <h1 class="sls_heading">Post Settings</h1>
 
         <div class="sls_setting-info"><?php settings_errors(); ?></div>
 
@@ -149,34 +149,4 @@ function sls_admin_enqueue_scripts(){
 
     // JQuery -------
     wp_enqueue_script( 'sls-admin-js', SLURI . '/include/admin/asset/admin-js.js', array(), fileatime( SLDIR . '/include/admin/asset/admin-js.js'), true );
-}
-
-
-// Action color to header ==============
-add_action( 'wp_head', 'sls_add_custom_color' );
-function sls_add_custom_color(){
-    // Main
-    $mainColor = !empty(get_option('sls_color')['main']) ? get_option('sls_color')['main'] : '#e74b2c';
-    $backgroundColor = !empty(get_option('sls_color')['bakgroud']) ? get_option('sls_color')['bakgroud'] : '#ffffff';
-
-    // Navbar
-    $navBgColor = !empty(get_option('sls_color')['nav-bg']) ? get_option('sls_color')['nav-bg'] : '#ffffff';
-    $navLink = !empty(get_option('sls_color')['nav-link']) ? get_option('sls_color')['nav-link'] : '#e74b2c';
-    $navHover = !empty(get_option('sls_color')['nav-hover']) ? get_option('sls_color')['nav-hover'] : '#f5866f';
-
-    // Single Post
-    $pColor = !empty(get_option('sls_color')['p-text']) ? get_option('sls_color')['p-text'] : '#606060';
-    $pLink = !empty(get_option('sls_color')['p-link']) ? get_option('sls_color')['p-link'] : '#e74b2c';
-    $pHover = !empty(get_option('sls_color')['p-hover']) ? get_option('sls_color')['p-hover'] : '#e74b2c';
-
-    // Footer
-    $fooBg = !empty(get_option('sls_color')['foo-bg']) ? get_option('sls_color')['foo-bg'] : '#000000';
-    $fooText = !empty(get_option('sls_color')['foo-text']) ? get_option('sls_color')['foo-text'] : '#ffffff';
-    $fooLink = !empty(get_option('sls_color')['foo-link']) ? get_option('sls_color')['foo-link'] : '#e74b2c';
-    $fooHover = !empty(get_option('sls_color')['foo-hover']) ? get_option('sls_color')['foo-hover'] : '#e74b2c';
-    ?>
-
-    <style>:root{--main-color: <?php echo $mainColor; ?>; --bg-color: <?php echo $backgroundColor; ?>; --nav-bg: <?php echo $navBgColor; ?>; --foo-bg: <?php echo $fooBg; ?>; --nav-link: <?php echo $navLink; ?>; --nav-hover: <?php echo $navHover ?>; --p-color: <?php echo $pColor; ?>; --p-link: <?php echo $pLink; ?>; --p-hover: <?php echo $pHover; ?>; --foo-text: <?php echo $fooText; ?>; --foo-link: <?php echo $fooLink; ?>; --foo-hover: <?php echo $fooHover; ?>; }</style>
-
-<?php
 }

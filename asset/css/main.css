@@ -20,6 +20,32 @@
     font-display: swap;
 }
 
+:root{
+    /* Body */
+    --bg-color: #ffffff;
+    /* Header */
+    --header-bg: #ffffff;
+    --header-link: #000000;
+    --header-hover: #e81010;
+    /* Posts */
+    --post-judul: #000000;
+    --post-judul-hover: #e81010;
+    --post-meta: #e81010;
+    --post-excerpt: #666666;
+    /* Article */
+    --article-heading: #000000;
+    --article-text: #666666;
+    --article-link: #e81010;
+    --article-hover: #ff0000;
+    /* Footer */
+    --foo-top-bg: #333333;
+    --foo-top-link: #ffffff;
+    --foo-top-hover: #999999;
+    --foo-bot-bg: #000000;
+    --foo-bot-text: #ffffff;
+    --foo-bot-link: #e81010;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -46,7 +72,7 @@ img{
 /* Header */
 .sls_header{
     position: relative;
-    background-color: var(--nav-bg);
+    background-color: var(--header-bg);
     width: 100%;
     padding-top: 1.5rem;
     padding-bottom: 10px;
@@ -72,10 +98,10 @@ img{
 .sls_open svg *{
     width: 35px;
     height: 35px;
-    stroke: var(--nav-link);
+    stroke: var(--header-link);
 }
 .sls_open:hover svg *{
-    stroke: var(--nav-hover);
+    stroke: var(--header-hover);
 }
 .slsBrand .brandUrl .slsLogo{
     width: auto;
@@ -94,7 +120,7 @@ img{
 .slsFormdesk #slsInput_search_desk,
 .formMobile input[type="text"]{
     width: 100%;
-    border: .5px solid var(--nav-link);
+    border: .5px solid var(--header-link);
     border-radius: 3px;
     padding: 5px 10px;
 }
@@ -104,13 +130,13 @@ img{
 }
 .slsFormdesk #slsInput_search_desk:focus,
 .formMobile input[type="text"]:focus{
-    outline: .5px solid var(--nav-hover);
-    border: .5px solid var(--nav-hover);
+    outline: .5px solid var(--header-hover);
+    border: .5px solid var(--header-hover);
 }
 .slsFormdesk .slsBtnSub,
 .formMobile .btnsearchMobile{
     border: none;
-    background-color: var(--nav-link);
+    background-color: var(--header-link);
     color: white;
     padding: 5px 10px;
     font-family: 'Oswald Regular';
@@ -121,7 +147,16 @@ img{
 }
 .slsFormdesk .slsBtnSub:hover,
 .formMobile .btnsearchMobile:hover{
-    background-color: var(--nav-hover);
+    background-color: var(--header-hover);
+}
+
+/* Scrolling mode */
+.sls_header.scrolling{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+    z-index: 9;
 }
 
 /* Menu Flexbox */
@@ -129,10 +164,11 @@ img{
     transform: translate(0);
 }
 .slsFlexbox{
-    position: absolute;
+    position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
-    background-color: var(--nav-bg);
+    background-color: var(--header-bg);
     width: 100%;
     max-width: 500px;
     min-height: 100vh;
@@ -150,7 +186,7 @@ img{
     margin-bottom: 1.5rem;
 }
 .flexBrand{
-    color: var(--nav-link);
+    color: var(--header-link);
     cursor: pointer;
 }
 .slsClose{
@@ -158,10 +194,10 @@ img{
     transition: 0.5s ease-in-out;
 }
 .slsClose:hover svg *{
-    fill: var(--nav-hover);
+    fill: var(--header-hover);
 }
 .slsClose svg *{
-    fill: var(--nav-link);
+    fill: var(--header-link);
     width: 25px;
     height: 25px;
 }
@@ -180,32 +216,30 @@ img{
 .slsMenu{
     list-style: none;
     font-family: 'Oswald Regular';
+    margin-top: 2rem;
 }
 .slsMenu li{
     margin: 10px 0;
     padding-bottom: 5px;
     padding-right: 10px;
-    font-size: 18px;
-    border-bottom: 1px solid var(--nav-hover);
+    font-size: 16px;
+    letter-spacing: 0.5px;
     width: max-content;
     transition: all .5s;
 }
 .slsMenu li .menu-link.active{
-    color: var(--nav-hover);
+    color: var(--header-hover);
 }
 .slsMenu li a{
-    color: var(--nav-link);
+    color: var(--header-link);
     text-decoration: none;
 }
 .slsMenu li a:hover {
-    color: var(--nav-hover);
+    color: var(--header-hover);
     transition: all .5s;
 }
-.slsMenu .menu-item-has-children {
-    border-bottom: none;
-}
 .slsMenu .menu-item-has-children .menu-link.active {
-    color: var(--nav-hover);
+    color: var(--header-hover);
 }
 .sub-menu {
     margin-top: 1rem;
@@ -213,20 +247,118 @@ img{
 }
 .slsMenu .sub-menu li::before {
     content: '\21E2 ';
-    margin-right: 5px
+    margin-right: 5px;
+    color: var(--header-hover);
 }
 
-/*
---main-color
---bg-color
---nav-bg
---foo-bg
---nav-link
---nav-hover
---p-color
---p-link
---p-hover
---foo-text
---foo-link
---foo-hover
-*/
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Pagination */
+.sls_pagination{
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-family: 'Oswald Regular';
+    font-size: 13px;
+}
+.sls_pagination .page-numbers{
+    background-color: var(--header-link);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--header-bg);
+}
+.sls_pagination .page-numbers.current{
+    background-color: var(--header-hover);
+    cursor: pointer;
+}
+
+
+/* Footer */
+.sls_foo{
+    margin-top: 5rem;
+}
+.fooTop{
+    background-color: var(--foo-top-bg);
+    padding: 2rem 0;
+}
+.top_inner{
+    width: 100%;
+    font-family: 'Oswald Regular';
+}
+.slsFooter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.slsFooter li{
+    font-size: 16px;
+    flex-shrink: 0;
+}
+.slsFooter li a{
+    text-decoration: none;
+    color: var(--foo-top-link);
+    transition: 0.5s ease-in-out;
+}
+.slsFooter li:hover a{
+    color: var(--foo-top-hover);
+}
+.fooBot{
+    text-align: center;
+    background-color: var(--foo-bot-bg);
+    padding: 15px 0;
+    font-family: 'Oswald Regular';
+}
+.ncopy{
+    color: var(--foo-bot-text);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.ncopy a{
+    color: var(--foo-bot-link);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Tablet */
+@media(max-width:769px){
+    .inner_right{
+        display: none;
+    }
+    .flexSearch{
+        display: block;
+    }
+}
+
+/* Mobile */
+@media(max-width:560px){
+    .sls_header{
+        padding-top: 1rem;
+        padding-bottom: 6px;
+    }
+    .slsBrand .brandUrl .slsLogo{
+        height: 30px;
+    }
+    .slsFooter{
+        gap: 1.5rem;
+    }
+    .slsFooter li{
+        font-size: 15px;
+    }
+}
