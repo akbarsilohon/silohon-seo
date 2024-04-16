@@ -17,8 +17,7 @@ define( 'SL_AUTHOR_URI', 'https://github.com/akbarsilohon' );
 define( 'SLURI', get_template_directory_uri());
 define( 'SLDIR', get_template_directory());
 function SLPART( $filename ){
-    $part = get_tempate_part( $filename );
-    return $part;
+    return get_template_part( $filename );
 }
 
 

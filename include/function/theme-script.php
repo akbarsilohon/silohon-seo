@@ -43,6 +43,23 @@ function sls_wp_enqueue_scripts(){
         );
     }
 
+    /**
+     * Author CSS Silohon SEO Wordpress Theme
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */
+    if(is_author()){
+        wp_enqueue_style( 
+            'sls-author-style', 
+            SLURI . '/asset/css/author.css', 
+            array(), fileatime( SLDIR . '/asset/css/author.css'), 
+            'all'
+        );
+    }
+
+
 
     /**
      * Main js for fronted

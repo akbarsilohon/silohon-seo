@@ -7,6 +7,46 @@
 .slsContent{
     display: block;
 }
+
+/* Author BOX */
+.author-box{
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    background-color: var(--bg-color);
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.author-box img.avatar{
+    width: 100px;
+    height: 100px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.bodyBox .authorName{
+    font-family: 'Oswald Regular';
+    color: #222;
+    margin-bottom: 3px;
+}
+.bodyBox .authorUri{
+    text-decoration: none;
+    font-family: 'Oswald Regular';
+    color: var(--header-hover);
+    font-size: 13px;
+}
+.bodyBox .authorDesc{
+    font-size: 16px;
+    color: var(--post-excerpt);
+    line-height: 1.5;
+}
+
+
+/* Content */
 .sls-with-thumbnail,
 .sls-without-thumbnail{
     margin-bottom: 2.5rem;
@@ -33,8 +73,6 @@
 .slsUri-thum:hover .slsThum-img{
     transform: scale(1.02);
 }
-
-
 
 .slsContent-meta{
     display: flex;
