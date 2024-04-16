@@ -77,6 +77,24 @@ function sls_wp_enqueue_scripts(){
     }
 
 
+
+    /**
+     * Tag CSS Silohon SEO Wordpress Theme
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */
+    if(is_tag()){
+        wp_enqueue_style( 
+            'sls-tag-style', 
+            SLURI . '/asset/css/tag.css', 
+            array(), fileatime( SLDIR . '/asset/css/tag.css'), 
+            'all'
+        );
+    }
+
+
     /**
      * Main js for fronted
      * 
