@@ -1,0 +1,164 @@
+.slsSingle{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto 300px;
+    gap: 2rem;
+}
+.singleContent,
+.slsArticle{
+    display: block;
+}
+.assetTop{
+    margin-bottom: 2rem;
+}
+.catSpan .slsCatlink{
+    font-family: 'Oswald Regular';
+    text-decoration: none;
+    color: white;
+    background-color: var(--article-link);
+    display: inline-block;
+    padding: 8px 10px;
+    font-weight: 11px;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 1.5rem;
+}
+.catSpan .slsCatlink:hover{
+    background-color: var(--post-judul);
+}
+.slsHeading{
+    font-family: 'Anton Regular';
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: var(--article-heading);
+    margin-bottom: 15px;
+}
+.authorMeta{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.authorMeta .slsAuth_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+}
+.bodyMeta{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Oswald Regular';
+    gap: 8px;
+}
+.slsUthUri{
+    color: var(--article-text);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.slsUthUri .slsAuthName{
+    color: var(--article-link);
+}
+.bodyMeta .dates{
+    color: var(--article-text);
+    font-size: 14px;
+}
+.sls_single-thumbnail{
+    width: 100%;
+    height: 100%;
+}
+
+.slsContent{
+    margin-bottom: 2rem;
+}
+.slsContent p,
+.slsContent ul,
+.slsContent ol{
+    line-height: 2;
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: var(--article-text);
+    word-break: break-all;
+}
+.slsContent blockquote{
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--article-heading);
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.slsContent p a,
+.slsContent ul a,
+.slsContent ol a{
+    color: var(--article-link);
+    text-decoration: none;
+}
+.slsContent ul{
+    list-style: square;
+    margin-left: 20px;
+}
+.slsContent ol{
+    list-style: decimal;
+    margin-left: 20px;
+}
+.slsContent p img,
+.slsContent p a img{
+    width: 100%;
+    height: 100%;
+    margin-bottom: -10px;
+}
+.slsContent h1,
+.slsContent h2,
+.slsContent h3,
+.slsContent h4,
+.slsContent h5,
+.slsContent h6{
+    font-family: 'Anton Regular';
+    color: var(--article-heading);
+    margin-bottom: 15px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+
+@media(max-width:951px){
+    .slsSingle{
+        grid-template-columns: auto 250px;
+    }
+}
+
+
+@media(max-width:831px){
+    .slsSingle{
+        grid-template-columns: auto 200px;
+    }
+}
+
+
+@media(max-width:768px){
+    .slsSingle{
+        display: block;
+    }
+}
+
+
+@media(max-width:568px){
+    .slsHeading{
+        font-size: 27px;
+    }
+    .sls_single-thumbnail,
+    .slsContent p a img,
+    .slsContent p img{
+        width: calc(100% + 40px);
+        margin-left: -20px;
+    }
+    .slsContent p,
+    .slsContent ul,
+    .slsContent ol{
+        font-size: 16px;
+    }
+}

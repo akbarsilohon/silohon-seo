@@ -38,7 +38,7 @@
     echo '<link rel="dns-prefetch" href="'. $fixReplace .'"/>';
     ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> itemscope itemtype="https://schema.org/Blog">
 
 <header class="sls_header">
     <div class="header_inner container">

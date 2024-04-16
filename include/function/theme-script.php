@@ -95,6 +95,41 @@ function sls_wp_enqueue_scripts(){
     }
 
 
+
+    /**
+     * Arthive date CSS Silohon SEO Wordpress Theme
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */
+    if(is_date()){
+        wp_enqueue_style( 
+            'sls-date-style', 
+            SLURI . '/asset/css/date.css', 
+            array(), fileatime( SLDIR . '/asset/css/date.css'), 
+            'all'
+        );
+    }
+
+
+    /**
+     * Arthive date CSS Silohon SEO Wordpress Theme
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */
+    if(is_single()){
+        wp_enqueue_style( 
+            'sls-single-style', 
+            SLURI . '/asset/css/single.css', 
+            array(), fileatime( SLDIR . '/asset/css/single.css'), 
+            'all'
+        );
+    }
+
+
     /**
      * Main js for fronted
      * 

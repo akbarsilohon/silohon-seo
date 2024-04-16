@@ -215,8 +215,24 @@ add_action( 'widgets_init', 'sls_widget_init' );
 function sls_widget_init(){
     register_sidebar(
         array(
-            'id'        =>  'home',
-            'name'      =>  esc_html__( 'Home Sidebar', 'silohon-seo' )
+            'id'            =>  'home',
+            'name'          =>  esc_html__( 'Home Sidebar', 'silohon-seo' )
         )
     );
+
+    register_sidebar(
+        array(
+            'id'            =>  'archive',
+            'name'          =>  esc_html__( 'Archive Sidebar', 'silohon-seo' )
+        )
+    );
+
+
+    register_sidebar(
+        array(
+            'id'            =>  'single',
+            'name'          =>  esc_html__( 'Single Sidebar', 'silohon-seo' )
+        )
+    );
+
 }
