@@ -67,11 +67,59 @@ get_header(); ?>
             </div>
         </article>
 
-        <!-- Tags -->
+        <?php
+            /**
+             * Show or not the tags
+             * 
+             * @package silohon-seo
+             * 
+             * @link https://github.com/akbarsilohon/silohon-seo.git
+             */
+            $slsTag = get_option('sls_article_settings')['tag'];
+            if( !empty( $slsTag ) && $slsTag === 'yes' ){
+                SLPART( 'views/aside/tag-part' );
+            }
 
-        <!-- Related Posts -->
 
-        <!-- Comments -->
+            /**
+             * Show or not the next and previous post
+             * 
+             * @package silohon-seo
+             * 
+             * @link https://github.com/akbarsilohon/silohon-seo.git
+             */
+            $slsNpPost = get_option('sls_article_settings')['np'];
+            if( !empty($slsNpPost) && $slsNpPost === 'yes' ){
+                SLPART( 'views/aside/next-prev' );
+            }
+
+
+            /**
+             * Show or not related post
+             * 
+             * @package silohon-seo
+             * 
+             * @link https://github.com/akbarsilohon/silohon-seo.git
+             */
+            $slsRelated = get_option('sls_article_settings')['rel'];
+            if( !empty( $slsRelated ) && $slsRelated === 'yes' ){
+                SLPART( 'views/aside/related-post' );
+            }
+
+
+            /**
+             * User can comments this post or not
+             * 
+             * @package silohon-seo
+             * 
+             * @link https://github.com/akbarsilohon/silohon-seo.git
+             */
+            $slsComments = get_option('sls_article_settings')['com'];
+            if( !empty( $slsComments ) && $slsComments === 'yes' && comments_open() ){
+                comments_template();
+            }
+
+        ?>
     </div>
 
     <?php get_sidebar(); ?>

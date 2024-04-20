@@ -95,3 +95,32 @@
 .more-link:hover{
     background-color: var(--post-judul);
 }
+
+
+
+@media(max-width:951px){
+    .slsBlog{
+        grid-template-columns: auto 250px;
+    }
+    .sls-with-thumbnail{
+        display: block;
+    }
+    .slsUri-thum .slsThum-img{
+        height: 300px;
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media(max-width:768px){
+    .slsBlog{
+        display: block;
+    }
+}
+
+
+@media(max-width:568px){
+    .slsUri-thum .slsThum-img{
+        height: 200px;
+    }
+}

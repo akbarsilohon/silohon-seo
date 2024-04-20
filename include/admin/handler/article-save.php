@@ -66,22 +66,21 @@ function art_protect_render(){
 }
 
 
-// Show Next & Prev Article ====================
-// =============================================
-add_settings_field( 'art-np', 'Next and Prev Article: ', 'art_np_render', 'sls-single-post', 'sls-article-2' );
-function art_np_render(){
-    $np = get_option('sls_article_settings')['np']; ?>
-    <input type="checkbox" name="sls_article_settings[np]" value="yes" <?php if( $np === 'yes' ) echo 'checked'; ?>/>
-    <?php
-}
-
-
 // Show Tags ===================================
 // =============================================
 add_settings_field( 'art-tag', 'Show Tags: ', 'art_tag_render', 'sls-single-post', 'sls-article-2' );
 function art_tag_render(){
     $tag = get_option('sls_article_settings')['tag']; ?>
     <input type="checkbox" name="sls_article_settings[tag]" value="yes" <?php if( $tag === 'yes' ) echo 'checked'; ?>/>
+    <?php
+}
+
+// Show Next & Prev Article ====================
+// =============================================
+add_settings_field( 'art-np', 'Next and Prev Article: ', 'art_np_render', 'sls-single-post', 'sls-article-2' );
+function art_np_render(){
+    $np = get_option('sls_article_settings')['np']; ?>
+    <input type="checkbox" name="sls_article_settings[np]" value="yes" <?php if( $np === 'yes' ) echo 'checked'; ?>/>
     <?php
 }
 
