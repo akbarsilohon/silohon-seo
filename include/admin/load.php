@@ -150,3 +150,46 @@ function sls_admin_enqueue_scripts(){
     // JQuery -------
     wp_enqueue_script( 'sls-admin-js', SLURI . '/include/admin/asset/admin-js.js', array(), fileatime( SLDIR . '/include/admin/asset/admin-js.js'), true );
 }
+
+
+
+/**
+ * Add Action print css to head
+ * 
+ * @package silohon-seo
+ * 
+ * @link https://github.com/akbarsilohon/silohon-seo.git
+ */
+
+add_action('wp_head', 'sls_load_root_css_color');
+function sls_load_root_css_color(){ 
+    // Background color
+    $bgColor = !empty(get_option('sls_color')['body-background']) ? get_option('sls_color')['body-background'] : '#ffffff';
+
+    // Header
+    $headerBg = !empty(get_option('sls_color')['header-bg']) ? get_option('sls_color')['header-bg'] : '#ffffff';
+    $headerLink = !empty(get_option('sls_color')['header-link']) ? get_option('sls_color')['header-link'] : '#000000';
+    $headerHov = !empty(get_option('sls_color')['header-hover']) ? get_option('sls_color')['header-hover'] : '#e81010';
+
+    // Post
+    $postJudul = !empty(get_option('sls_color')['post-title']) ? get_option('sls_color')['post-title'] : '#000000';
+    $postHover = !empty(get_option('sls_color')['post-hover']) ? get_option('sls_color')['post-hover'] : '#e81010';
+    $postMeta = !empty(get_option('sls_color')['post-meta']) ? get_option('sls_color')['post-meta'] : '#e81010';
+    $postExcerpt = !empty(get_option('sls_color')['post-excerpt']) ? get_option('sls_color')['post-excerpt'] : '#666666';
+
+    // Article
+    $articleHeading = !empty(get_option('sls_color')['article-heading']) ? get_option('sls_color')['article-heading'] : '#000000';
+    $articleText = !empty(get_option('sls_color')['article-text']) ? get_option('sls_color')['article-text'] : '#666666';
+    $articleLink = !empty(get_option('sls_color')['article-link']) ? get_option('sls_color')['article-link'] : '#e81010';
+    $articleHover = !empty(get_option('sls_color')['article-hover']) ? get_option('sls_color')['article-hover'] : '#ff0000';
+
+    // Footer
+    $fooTopBg = !empty(get_option('sls_color')['foo-top-bg']) ? get_option('sls_color')['foo-top-bg'] : '#333333';
+    $foooTopLink = !empty(get_option('sls_color')['foo-top-link']) ? get_option('sls_color')['foo-top-link'] : '#ffffff';
+    $fooTopHov = !empty(get_option('sls_color')['foo-top-hover']) ? get_option('sls_color')['foo-top-hover'] : '#999999';
+    $fooBotBg = !empty(get_option('sls_color')['foo-bot-bg']) ? get_option('sls_color')['foo-bot-bg'] : '#000000';
+    $fooBotText = !empty(get_option('sls_color')['foo-bot-text']) ? get_option('sls_color')['foo-bot-text'] : '#ffffff';
+    $fooBotLink = !empty(get_option('sls_color')['foo-bot-link']) ? get_option('sls_color')['foo-bot-link'] : '#e81010';
+    
+    echo '<style>:root{--bg-color:'.$bgColor.';--header-bg:'.$headerBg.';--header-link:'.$headerLink.';--header-hover:'.$headerHov.';--post-judul:'.$postJudul.';--post-judul-hover:'.$postHover.';--post-meta:'.$postMeta.';--post-excerpt:'.$postExcerpt.';--article-heading:'.$articleHeading.';--article-text:'.$articleText.';--article-link:'.$articleLink.';--article-hover:'.$articleHover.';--foo-top-bg:'.$fooTopBg.';--foo-top-link:'.$foooTopLink.';--foo-top-hover:'.$fooTopHov.';--foo-bot-bg:'.$fooBotBg.';--foo-bot-text:'.$fooBotText.';--foo-bot-link:'.$fooBotLink.';}</style>';
+}
