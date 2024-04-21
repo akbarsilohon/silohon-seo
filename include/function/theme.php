@@ -235,4 +235,9 @@ function sls_widget_init(){
         )
     );
 
+
+    // Register custom widgets
+    register_widget( 'Sls_Widgets_Recent_Post' );
+    register_widget( 'Sls_Widget_Popular_posts' );
+
 }
