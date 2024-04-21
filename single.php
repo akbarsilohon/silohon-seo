@@ -15,6 +15,7 @@ get_header(); ?>
     <div class="singleContent">
         <!-- Article -->
         <article id="post-<?php the_ID(); ?>" class="slsArticle" itemscope itemtype="https://schema.org/NewsArticle">
+            <?php sls_save_post_veiws( get_the_ID() ); ?>
             <div class="assetTop">
                 <div class="catSpan">
                     <?php sls_cat_with_link(); ?>
