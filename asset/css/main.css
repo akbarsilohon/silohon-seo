@@ -266,9 +266,66 @@ img{
 /* Sidebar */
 .slsSidebar *{
     list-style: none;
+    font-family: 'Oswald Regular';
+    text-decoration: none;
+    color: var(--header-link);
 }
-
-
+.slsAside_lpp{
+    display: block;
+    margin-bottom: 2.5rem;
+}
+.aside_judulBox{
+    border-bottom: 2px solid var(--header-hover);
+    margin-bottom: 1rem;
+    padding-bottom: 3px;
+}
+.asideTitle{
+    color: white;
+    background-color: var(--header-hover);
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.asideWith_thumb{
+    display: grid;
+    grid-template-columns: 90px auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.asideBody,
+.asideBox{
+    display: block;
+    margin-bottom: 1rem;
+}
+.asideUrl .asideThumb{
+    width: 100%;
+    height: 90px;
+    object-position: center;
+    object-fit: cover;
+}
+.asideMeta{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--post-excerpt);
+    margin-bottom: 8px;
+}
+.asideMeta .cates{
+    color: var(--post-judul-hover);
+    font-weight: bold;
+}
+.titSid h3{
+    color: var(--post-judul);
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease-in-out;
+    word-wrap: break-word;
+}
+.titSid h3:hover{
+    color: var(--post-judul-hover);
+}
 
 
 /* Footer */
@@ -327,6 +384,9 @@ img{
     }
     .flexSearch{
         display: block;
+    }
+    .sls_pagination{
+        margin-bottom: 3rem;
     }
 }
 
