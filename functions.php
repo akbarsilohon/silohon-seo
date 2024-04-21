@@ -26,6 +26,7 @@ function SLPART( $filename ){
 require_once SLDIR . '/include/function/theme.php';
 require_once SLDIR . '/include/function/remove-action.php';
 require_once SLDIR . '/include/function/theme-script.php';
+require_once SLDIR . '/include/function/widgets.php';
 
 
 // Admin function ===============================
