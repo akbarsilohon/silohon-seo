@@ -21,7 +21,7 @@ add_settings_field( 'sls-logo', 'Logo: ', 'sls_render_logo', 'sls', 'sls-general
 function sls_render_logo(){
     $options = get_option( 'sls_g_settings' );
     $logo = $options[ 'logo' ]; ?>
-    <input type="url" name="sls_g_settings[logo]" id="slsLogo" value="<?php echo esc_url( $logo ) ?>" placeholder="Logo Here.." /><br>
+    <input type="url" name="sls_g_settings[logo]" id="slsLogo" value="<?php echo esc_url( $logo ) ?>" placeholder="Recommended (380 x 80 px)" /><br>
     <button style="margin-top: 10px" id="slsChangeLogo" type="button" class="button button-primary">Change</button>
     <?php
 }
@@ -42,14 +42,14 @@ function sls_ogactive(){
 add_settings_field( 'sls-ogname', 'Organization Name', 'sls_ogname_render', 'sls', 'sls-org' );
 function sls_ogname_render(){
     $ogName = get_option( 'sls_g_settings' )['ogName'];
-    echo '<input type="text" name="sls_g_settings[ogName]" value="'. $ogName .'">';
+    echo '<input type="text" name="sls_g_settings[ogName]" value="'. $ogName .'" placeholder="Your Organization Name..">';
 }
 
 // Organization URL ----------
 add_settings_field( 'sls-ogurl', 'Website', 'sls_ogurl_render', 'sls', 'sls-org' );
 function sls_ogurl_render(){
     $ogUrl = get_option( 'sls_g_settings' )['ogUrl'];
-    echo '<input type="url" name="sls_g_settings[ogUrl]" value="'. $ogUrl .'">';
+    echo '<input type="url" name="sls_g_settings[ogUrl]" value="'. $ogUrl .'" placeholder="Your Organization Website..">';
 }
 
 // Organization SameAs ----------

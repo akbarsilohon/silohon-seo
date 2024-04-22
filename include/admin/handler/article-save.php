@@ -15,6 +15,15 @@ add_settings_section( 'sls-article-2', '<h2 class="slsSection">Article</h2>', nu
 register_setting( 'sls-article-group', 'sls_article_settings' );
 
 
+// =========================================
+// Redirect 404 ============================
+add_settings_field( 'art-404', 'Reirect 404 to Homepage', function(){
+    $nothing404 = get_option('sls_article_settings')['404'];
+    $conDition = !empty( $nothing404 ) && $nothing404 === 'true' ? 'checked' : '';
+    echo '<input type="checkbox" name="sls_article_settings[404]" value="true" '.$conDition.' />';
+}, 'sls-single-post', 'sls-article' );
+
+
 // Thumbnails size =============================
 // =============================================
 add_settings_field( 'art-thum-size', 'Thumbnail Size: ', function(){
