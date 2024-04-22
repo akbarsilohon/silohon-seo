@@ -241,3 +241,21 @@ function sls_widget_init(){
     register_widget( 'Sls_Widget_Popular_posts' );
 
 }
+
+
+/**
+ * Redirect url 404 to homepage
+ * 
+ * @package silohon-seo
+ */
+$redirectOption = get_option('sls_article_settings')['404'];
+if( !empty( $redirectOption ) && $redirectOption === 'true' ){
+    add_action( 'template_redirect', 'sls_redirect_404_to_homepage' );
+}
+
+function sls_redirect_404_to_homepage(){
+    if(is_404() && $_SERVER['REQUEST_URI'] !== '/404'){
+        wp_redirect( home_url() );
+        exit();
+    }
+}

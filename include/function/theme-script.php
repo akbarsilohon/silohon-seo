@@ -114,7 +114,7 @@ function sls_wp_enqueue_scripts(){
 
 
     /**
-     * Arthive date CSS Silohon SEO Wordpress Theme
+     * Single Post CSS Silohon SEO Wordpress Theme
      * 
      * @package silohon-seo
      * 
@@ -125,6 +125,39 @@ function sls_wp_enqueue_scripts(){
             'sls-single-style', 
             SLURI . '/asset/css/single.css', 
             array(), fileatime( SLDIR . '/asset/css/single.css'), 
+            'all'
+        );
+    }
+
+    /**
+     * Searche Result CSS Silohon SEO Wordpress Theme
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */
+    if(is_search()){
+        wp_enqueue_style( 
+            'sls-search-style', 
+            SLURI . '/asset/css/search.css', 
+            array(), fileatime( SLDIR . '/asset/css/search.css'), 
+            'all'
+        );
+    }
+
+
+    /**
+     * 404 CSS Silohon SEO Wordpress Theme
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */
+    if(is_404()){
+        wp_enqueue_style( 
+            'sls-404-style', 
+            SLURI . '/asset/css/no-found.css', 
+            array(), fileatime( SLDIR . '/asset/css/no-found.css'), 
             'all'
         );
     }
