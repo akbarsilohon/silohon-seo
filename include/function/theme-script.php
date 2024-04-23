@@ -170,11 +170,13 @@ function sls_wp_enqueue_scripts(){
      * 
      * @link https://github.com/akbarsilohon/silohon-seo.git
      */
-    wp_enqueue_script( 
-        'sls-main-js',
-        SLURI . '/asset/js/main.js',
-        [], fileatime( SLDIR . '/asset/js/main.js'),
-        true
-    );
+    if(!is_search()){
+        wp_enqueue_script( 
+            'sls-main-js',
+            SLURI . '/asset/js/main.js',
+            [], fileatime( SLDIR . '/asset/js/main.js'),
+            true
+        );
+    }
 
 }
