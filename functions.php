@@ -37,3 +37,8 @@ require_once SLDIR . '/include/admin/load.php';
 // Shortcode ====================================
 // ==============================================
 require_once SLDIR . '/include/code/shortcode.php';
+
+
+// Page Builder =================================
+// ==============================================
+require SLDIR . '/include/build/load-admin.php';

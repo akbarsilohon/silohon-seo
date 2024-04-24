@@ -40,7 +40,7 @@ get_header(); ?>
                         echo '<img width="150" height="150" class="slsAuth_img" src="'. $avatar .'">';
                     ?>
                     <div class="bodyMeta">
-                        <a href="<?php echo $web . get_the_author_nickname( $ids ); ?>" class="slsUthUri">
+                        <a href="<?php echo home_url('/author/') . get_the_author_meta( 'user_nicename', $ids ); ?>" class="slsUthUri">
                             By: <span class="slsAuthName"> <?php echo $names; ?></span>
                         </a>
                         <span class="dates"><?php echo the_time('F D Y'); ?></span>

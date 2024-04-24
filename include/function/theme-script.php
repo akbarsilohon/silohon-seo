@@ -43,6 +43,24 @@ function sls_wp_enqueue_scripts(){
         );
     }
 
+
+    /**
+     * Page && HomePage Css Silohon SEO Wordpress Theme
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */
+    if(is_page()){
+        global $post;
+        $get_meta = get_post_meta( $post->ID );
+        if( !empty($get_meta['sls_page_builderss'])){
+            wp_enqueue_style( 'page-builder-css', SLURI . '/asset/css/page-builder.css', [], fileatime( SLDIR . '/asset/css/page-builder.css'), 'all' );
+        } else{
+            wp_enqueue_style( 'page-css', SLURI . '/asset/css/page.css', [], fileatime( SLDIR . '/asset/css/page.css'), 'all' );
+        }
+    }
+
     /**
      * Author CSS Silohon SEO Wordpress Theme
      * 
