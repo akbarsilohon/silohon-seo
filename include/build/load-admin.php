@@ -21,10 +21,10 @@ function sls_build_page_builder(){
     }
     
     $get_meta = get_post_custom( $post->ID );
-    if( isset( $get_meta['sls_data'])){
+    if( isset( $get_meta['sls_data'][0])){
         $data = false;
-        if( !empty( $get_meta['sls_data'] )){
-            $data = $get_meta['sls_data'];
+        if( !empty( $get_meta['sls_data'][0] )){
+            $data = $get_meta['sls_data'][0];
             if(is_serialized( $data )){
                 $data = unserialize( $data );
             }
