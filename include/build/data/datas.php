@@ -75,7 +75,7 @@
 
                         <div class="body_item">
                             <label for="">Random Post:</label>
-                            <input <?php if( isset($dt['order']) && $dt['order'] == 'rand' ) echo 'checked'; ?> type="checkbox" name="sls_builder_data[<?php echo $i; ?>][rand]" value="rand">
+                            <input <?php if( isset($dt['order']) && $dt['order'] == 'rand' ) echo 'checked'; ?> type="checkbox" name="sls_builder_data[<?php echo $i; ?>][order]" value="rand">
                         </div>
 
                         <input type="hidden" name="sls_builder_data[<?php echo $i; ?>][style]" value="<?php echo $dt['style']; ?>">
