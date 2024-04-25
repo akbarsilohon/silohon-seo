@@ -19,9 +19,28 @@ if(!empty($get_meta['sls_page_builderss'])){
      * 
      * @link https://github.com/akbarsilohon/silohon-seo.git
      */
-    if( !empty( $get_meta['sls_hero']) ){
+    if( !empty( $get_meta['sls_hero'][0])){
         SLPART('views/template/custom/hero');
     }
+
+    /**
+     * Multi style
+     * 
+     * @package silohon-seo
+     * 
+     * @link https://github.com/akbarsilohon/silohon-seo.git
+     */ ?>
+    <div class="container">
+        <div class="slsPartisi">
+            <div class="partisi_inner">
+                <?php SLPART('views/template/custom/builder'); ?>
+            </div>
+
+            <?php get_sidebar(); ?>
+        </div>
+    </div>
+
+    <?php
 } else{
     /**
      * Normalis page

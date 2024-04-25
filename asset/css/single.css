@@ -113,7 +113,8 @@
     margin-left: 20px;
 }
 .slsContent p img,
-.slsContent p a img{
+.slsContent p a img,
+.slsContent * img{
     width: 100%;
     height: 100%;
     margin-bottom: -10px;
@@ -280,7 +281,8 @@
     }
     .sls_single-thumbnail,
     .slsContent p a img,
-    .slsContent p img{
+    .slsContent p img,
+    .slsContent * img{
         width: calc(100% + 40px);
         margin-left: -20px;
     }

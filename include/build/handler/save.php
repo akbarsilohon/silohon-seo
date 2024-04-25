@@ -47,7 +47,7 @@ function sls_save_builder( $post_id ){
 
 
     $hero = $_POST['hero'];
-    if(isset($hero) && !empty($hero)){
+    if(isset($hero) && !empty($hero) && $hero['active'] == 'true' ){
         $hero_data = $hero;
         array_walk_recursive( $hero_data, function(&$value){
             $value = sanitize_text_field($value);

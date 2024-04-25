@@ -22,7 +22,7 @@ if(isset($get_meta['sls_hero'][0])){
 
 <section class="hero">
     <div class="hero_inner">
-        <span class="heading">Hero Setting</span>
+        <span class="heading">Slider</span>
         <div id="btnhero">
             <i id="openhero" class='bx bx-plus-circle'></i>
             <i id="closehero" class='bx bx-minus-circle'></i>
