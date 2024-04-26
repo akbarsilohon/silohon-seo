@@ -56,7 +56,7 @@ $i = 0; ?>
                                 the_post_thumbnail( 
                                     'full',
                                     array(
-                                        'class'     =>  'sls-imgfull',
+                                        'class'     =>  'sls-imgfull mg1',
                                         'loading'   =>  'lazy'
                                     )
                                 );
