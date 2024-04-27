@@ -22,7 +22,6 @@ img{
 }
 
 .my-ads{
-    background-color: aqua;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -94,7 +93,7 @@ img{
 .slsFormdesk .slsBtnSub,
 .formMobile .btnsearchMobile{
     border: none;
-    background-color: var(--header-link);
+    background-color: var(--header-hover);
     color: white;
     padding: 5px 10px;
     cursor: pointer;
@@ -103,7 +102,7 @@ img{
 }
 .slsFormdesk .slsBtnSub:hover,
 .formMobile .btnsearchMobile:hover{
-    background-color: var(--header-hover);
+    background-color: var(--header-link);
 }
 
 /* Scrolling mode */

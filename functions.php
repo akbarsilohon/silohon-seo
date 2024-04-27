@@ -9,7 +9,7 @@
 
 
 define( 'SL_NAME', 'Silohon SEO' );
-define( 'SL_VER', '1.0.1' );
+define( 'SL_VER', '1.6.0' );
 define( 'SL_URI', 'https://github.com/akbarsilohon/silohon-seo.git' );
 define( 'SL_AUTHOR', 'Nur Akbar' );
 define( 'SL_AUTHOR_URI', 'https://github.com/akbarsilohon' );
