@@ -48,7 +48,7 @@ add_shortcode( 'sls_ad1', 'sls_ad1_render' );
 function sls_ad1_render(){
     $ad1 = get_option('sls_ads_set')['sc1'];
     if( !empty($ad1) ){
-        $outputAd1 = '<div class="sls_ads" style="margin:10px 0; width: 100%;">';
+        $outputAd1 = '<div class="my-ads">';
         $outputAd1 .= $ad1;
         $outputAd1 .= '</div>';
 
@@ -61,7 +61,7 @@ add_shortcode( 'sls_ad2', 'sls_ad2_render' );
 function sls_ad2_render(){
     $ad2 = get_option('sls_ads_set')['sc2'];
     if( !empty($ad2) ){
-        $outputAd2 = '<div class="sls_ads" style="margin:10px 0; width: 100%;">';
+        $outputAd2 = '<div class="my-ads">';
         $outputAd2 .= $ad2;
         $outputAd2 .= '</div>';
 

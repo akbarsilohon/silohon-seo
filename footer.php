@@ -8,6 +8,15 @@
  * 
  * @link https://github.com/akbarsilohon/silohon-seo.git
  */
+
+
+$footerAds = get_option('sls_ads_set')['footer'];
+if(!empty($footerAds)){
+    echo '<div class="container my-ads">';
+    echo $footerAds;
+    echo '</div>';
+}
+
 ?>
 
 <footer class="sls_foo">

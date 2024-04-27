@@ -21,6 +21,12 @@ img{
     width: 0;
 }
 
+.my-ads{
+    background-color: aqua;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /* Header */
 .sls_header{
     position: relative;

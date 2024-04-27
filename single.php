@@ -63,9 +63,29 @@ get_header(); ?>
                 ?>
             </div>
 
+            <?php 
+                $beforeContent = get_option('sls_ads_set')['before_content'];
+                if(!empty($beforeContent)){
+                    echo '<div class="my-ads">';
+                    echo $beforeContent;
+                    echo '</div>';
+                }
+            
+            ?>
+
             <div class="slsContent">
                 <?php the_content(); ?>
             </div>
+
+            <?php 
+                $afterContent = get_option('sls_ads_set')['after_content'];
+                if(!empty($afterContent)){
+                    echo '<div class="my-ads">';
+                    echo $afterContent;
+                    echo '</div>';
+                }
+            
+            ?>
         </article>
 
         <?php

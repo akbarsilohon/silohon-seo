@@ -74,6 +74,21 @@
 
 <?php
 /**
+ * Call Ads if Exist
+ * 
+ * After Navbar Ads
+ * 
+ * @package silohon-seo
+ */
+$adsNavbar = get_option('sls_ads_set')['header'];
+if(!empty($adsNavbar)){
+    echo '<div class="container my-ads">';
+    echo $adsNavbar;
+    echo '</div>';
+}
+
+
+/**
  * Menu Flexbox Silohon SEO Theme
  * 
  * @package silohon-seo
