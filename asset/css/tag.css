@@ -1,13 +1,3 @@
-.slsBlog{
-    display: grid;
-    grid-template-columns: auto 300px;
-    gap: 2rem;
-    margin-top: 3rem;
-}
-.slsContent{
-    display: block;
-}
-
 /* Span BOX */
 .sectionCat{
     position: relative;
@@ -17,9 +7,8 @@
 .sectionSpan{
     background-color: var(--header-hover);
     color: white;
-    padding: 7px 15px;
-    font-family: 'Oswald Regular';
-    font-size: 16px;
+    padding: 5px 10px;
+    font-size: 14px;
     transition: 0.3 ease-in-out;
     border-radius: 4px;
     cursor: pointer;
@@ -29,6 +18,15 @@
     background-color: var(--header-link);
 }
 
+.slsBlog{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.slsContent{
+    display: block;
+}
 .sls-with-thumbnail,
 .sls-without-thumbnail{
     margin-bottom: 2.5rem;
@@ -57,13 +55,11 @@
 }
 
 
-
 .slsContent-meta{
     display: flex;
     gap: 5px;
     align-items: center;
-    font-family: 'Oswald Regular';
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--post-excerpt);
     flex-wrap: wrap;
 }
@@ -71,13 +67,10 @@
     color: var(--post-meta);
     text-decoration: none;
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
     font-weight: bold;
 }
 .slsDate{
     font-size: 12px;
-    font-weight: bold;
 }
 .slsContent-heading{
     text-decoration: none;
@@ -90,8 +83,8 @@
     color: var(--post-judul-hover);
 }
 .slsContent-title{
-    font-family: 'Oswald Regular';
     font-size: 25px;
+    font-weight: 800;
     line-height: 1.3;
 }
 .slsexcerpt{
@@ -109,8 +102,7 @@
     border-radius: 4px;
     width: max-content;
     line-height: 1.3;
-    font-family: 'Oswald Regular';
-    font-size: 14px;
+    font-size: 11px;
     color: white;
     transition: 0.3s ease-in-out;
 }
@@ -118,13 +110,13 @@
     background-color: var(--post-judul);
 }
 
-@media(max-width:951px){
+@media(max-width:1024px){
     .slsBlog{
-        grid-template-columns: auto 250px;
+        grid-template-columns: 2fr 1fr;
     }
-    .sls-with-thumbnail{
-        display: block;
-    }
+}
+
+@media(max-width:951px){
     .slsUri-thum .slsThum-img{
         height: 300px;
         margin-bottom: 1rem;
@@ -140,6 +132,9 @@
 
 
 @media(max-width:568px){
+    .sls-with-thumbnail{
+        display: block;
+    }
     .slsUri-thum .slsThum-img{
         height: 200px;
     }

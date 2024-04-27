@@ -1,7 +1,7 @@
 .slsSingle{
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: auto 300px;
+    grid-template-columns: 3fr 1fr;
     gap: 2rem;
 }
 .singleContent,
@@ -12,26 +12,26 @@
     margin-bottom: 2rem;
 }
 .catSpan .slsCatlink{
-    font-family: 'Oswald Regular';
     text-decoration: none;
     color: white;
     background-color: var(--article-link);
     display: inline-block;
-    padding: 8px 10px;
+    padding: 5px 10px;
     font-weight: 11px;
     transition: 0.3s ease-in-out;
     margin-bottom: 1.5rem;
+    font-size: 14px;
+    border-radius: 4px;
 }
 .catSpan .slsCatlink:hover{
     background-color: var(--post-judul);
 }
 .slsHeading{
-    font-family: 'Anton Regular';
     font-size: 40px;
     line-height: 1.2;
-    letter-spacing: 1px;
     color: var(--article-heading);
     margin-bottom: 15px;
+    font-weight: 900;
 }
 .authorMeta{
     display: flex;
@@ -49,7 +49,6 @@
 .bodyMeta{
     display: flex;
     flex-direction: column;
-    font-family: 'Oswald Regular';
     gap: 8px;
 }
 .slsUthUri{
@@ -80,7 +79,6 @@
     margin-bottom: 25px;
     font-size: 18px;
     color: var(--article-text);
-    word-break: break-all;
 }
 .slsContent blockquote{
     margin-bottom: 25px;
@@ -125,12 +123,11 @@
 .slsContent h4,
 .slsContent h5,
 .slsContent h6{
-    font-family: 'Oswald Regular';
     color: var(--article-heading);
     margin-bottom: 15px;
     line-height: 1.5;
-    letter-spacing: 1px;
     transition: 0.3s ease-in-out;
+    font-weight: 700;
 }
 .slsContent h1 a,
 .slsContent h2 a,
@@ -155,7 +152,6 @@
     margin-top: 2rem;
     display: flex;
     gap: 1rem;
-    font-family: 'Oswald Regular';
     font-size: 16px;
 }
 .slsSpanTag{
@@ -212,7 +208,6 @@
 .slsRels{
     margin-top: 2rem;
     display: block;
-    font-family: 'Oswald Regular';
 }
 .spanRel{
     border-bottom: 2px solid var(--header-link);
@@ -261,12 +256,11 @@
 }
 
 
-@media(max-width:951px){
+@media(max-width:1024px){
     .slsSingle{
-        grid-template-columns: auto 250px;
+        grid-template-columns: 2fr 1fr;
     }
 }
-
 
 @media(max-width:768px){
     .slsSingle{

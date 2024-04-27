@@ -81,7 +81,7 @@ function sls_faq_render( $atts, $content = null ){
     $html = '<h2>'. $judul .'</h2>';
     $html .= $intro;
 
-    $html .= '<style>.slsFaqs{margin-bottom:25px}.slsFaqTanya{display:flex;align-items:center;justify-content:space-between;font-family:"Oswald Regular";gap:1rem;font-weight:700;padding-bottom:1rem;border-bottom:1px solid var(--article-link);margin-bottom:1rem}.slsFaqTanya .slsQuestion{font-size:18px;color:var(--article-heading);line-height:2;}.slsFaqTanya #faqToggle{background-color:var(--article-link);color:#fff;padding:5px 10px;cursor:pointer;height:max-content}.slsFaqJawab{font-family:"PT Serif";font-size:18px;line-height:2;color:var(--article-text);word-wrap:break-word;margin-bottom:1rem;display:none}@media(max-width:560px){.slsFaqJawab{font-size:16px}}</style>';
+    $html .= '<style>.slsFaqs{margin-bottom:25px}.slsFaqTanya{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-weight:700;padding-bottom:1rem;border-bottom:1px solid var(--article-link);margin-bottom:1rem}.slsFaqTanya .slsQuestion{font-size:18px;color:var(--article-heading);line-height:2;}.slsFaqTanya #faqToggle{background-color:var(--article-link);color:#fff;padding:5px 10px;cursor:pointer;height:max-content}.slsFaqJawab{font-size:18px;line-height:2;color:var(--article-text);word-wrap:break-word;margin-bottom:1rem;display:none}@media(max-width:560px){.slsFaqJawab{font-size:16px}}</style>';
 
     $html .= '<div class="slsFaqs">';
 

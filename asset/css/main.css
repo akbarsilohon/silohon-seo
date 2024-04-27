@@ -1,24 +1,4 @@
-@font-face {
-    font-family: 'Anton Regular';
-    src: url('../fonts/anton.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'PT Serif';
-    src: url('../fonts/ptserif.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Oswald Regular';
-    src: url('../fonts/oswald.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -26,7 +6,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'PT Serif', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
     overflow-x: hidden;
 }
@@ -111,8 +91,6 @@ img{
     background-color: var(--header-link);
     color: white;
     padding: 5px 10px;
-    font-family: 'Oswald Regular';
-    letter-spacing: .4px;
     cursor: pointer;
     border-radius: 3px;
     transition: 0.5s ease-in-out;
@@ -156,7 +134,6 @@ img{
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    font-family: 'Oswald Regular';
     margin-bottom: 1.5rem;
 }
 .flexBrand{
@@ -189,7 +166,6 @@ img{
 /* Menu nav */
 .slsMenu{
     list-style: none;
-    font-family: 'Oswald Regular';
     margin-top: 2rem;
 }
 .slsMenu li{
@@ -197,7 +173,6 @@ img{
     padding-bottom: 5px;
     padding-right: 10px;
     font-size: 16px;
-    letter-spacing: 0.5px;
     width: max-content;
     transition: all .5s;
 }
@@ -246,7 +221,6 @@ img{
     align-items: center;
     gap: 8px;
     flex-wrap: wrap;
-    font-family: 'Oswald Regular';
     font-size: 13px;
 }
 .sls_pagination .page-numbers{
@@ -266,7 +240,6 @@ img{
 /* Sidebar */
 .slsSidebar *{
     list-style: none;
-    font-family: 'Oswald Regular';
     text-decoration: none;
     color: var(--header-link);
 }
@@ -319,7 +292,6 @@ img{
     text-decoration: none;
     font-size: 15px;
     line-height: 1.2;
-    letter-spacing: 0.5px;
     transition: 0.3s ease-in-out;
     word-wrap: break-word;
 }
@@ -338,7 +310,6 @@ img{
 }
 .top_inner{
     width: 100%;
-    font-family: 'Oswald Regular';
 }
 .slsFooter{
     list-style: none;
@@ -364,12 +335,10 @@ img{
     text-align: center;
     background-color: var(--foo-bot-bg);
     padding: 15px 0;
-    font-family: 'Oswald Regular';
 }
 .ncopy{
     color: var(--foo-bot-text);
     font-size: 14px;
-    letter-spacing: 1px;
 }
 .ncopy a{
     color: var(--foo-bot-link);
