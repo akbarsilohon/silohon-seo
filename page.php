@@ -61,10 +61,34 @@ if(!empty($get_meta['sls_page_builderss'])){
      * @package silohon-seo
      * 
      * @link https://github.com/akbarsilohon/silohon-seo.git
-     */
+     */ ?>
 
-    echo get_the_title();
+    <div class="slsSingle container">
+        <div class="singleContent">
+            <article id="post-<?php the_ID(); ?>" class="slsArticle">
+                <div class="assetTop">
+                    <?php the_title('<h2 class="slsHeading">', '</h2>'); ?>
+                    <?php 
+                        $options_img = get_option('sls_article_settings')['thumbnail'];
+                        if( has_post_thumbnail() && $options_img === 'show'){
+                            the_post_thumbnail( 'full', array(
+                                'loading'           =>  'lazy',
+                                'class'             =>  'sls_single-thumbnail'
+                            ));
+                        }
+                    ?>
+                </div>
 
+                <div class="slsContent">
+                    <?php the_content(); ?>
+                </div>
+            </article>
+        </div>
+
+        <?php get_sidebar(); ?>
+    </div>
+
+<?php
 }
 
 get_footer();
