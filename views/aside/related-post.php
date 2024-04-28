@@ -28,16 +28,9 @@ if( $relateds ) : ?>
             <?php foreach( $relateds as $post ) : ?>
                 <?php setup_postdata( $post ); ?>
                 <div class="inner_rel">
-                    <?php if( has_post_thumbnail()) : ?>
-                        <a href="<?php echo the_permalink(); ?>" class="relTHumUri">
-                            <?php the_post_thumbnail( 
-                                'full',
-                                array(
-                                    'loading'       =>  'lazy'
-                                )
-                            ) ?>
-                        </a>
-                    <?php endif; ?>
+                    <a href="<?php echo the_permalink(); ?>" class="relTHumUri">
+                        <?php generate_squar_thumnails(get_the_ID(), null); ?>
+                    </a>
                     <div class="relBody">
                         <span class="metaDate">Post On: <?php echo the_time('F D Y'); ?></span>
                         <a href="<?php echo the_permalink(); ?>" class="relTitle">

@@ -49,15 +49,7 @@ $i = 0; ?>
 
                         <article id="post-<?php the_ID(); ?>" class="boxRelative">
                             <a href="<?php echo the_permalink(); ?>" class="urlBox">
-                                <?php if(has_post_thumbnail()){
-                                    the_post_thumbnail(
-                                        'full',
-                                        array(
-                                            'class'         =>  'boxThumbnail',
-                                            'loading'       =>  'lazy'
-                                        )
-                                    );
-                                } ?>
+                                <?php generate_squar_thumnails(get_the_ID(), 'boxThumbnail'); ?>
                                 <div class="body_absolute">
                                     <div class="absolute-meta">
                                         <span class="grid_author">By: <?php the_author(); ?></span>
@@ -81,15 +73,7 @@ $i = 0; ?>
 
                     <article id="post-<?php the_ID(); ?>" class="sls_grid-2-90">
                         <a href="<?php echo the_permalink(); ?>" class="dataUrl">
-                            <?php if(has_post_thumbnail()){
-                                the_post_thumbnail(
-                                    'medium',
-                                    array(
-                                        'class'     => 'sls-imgmedium',
-                                        'loading'   =>  'lazy'
-                                    )
-                                );
-                            } ?>
+                            <?php generate_squar_thumnails(get_the_ID(), 'sls-imgmedium'); ?>
                         </a>
                         <div class="sls_grid-body">
                             <div class="sls_grid-meta">

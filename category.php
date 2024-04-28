@@ -23,18 +23,7 @@ if(have_posts()){ ?>
                 the_post(); ?>
 
                     <article class="<?php echo sls_check_thumbnails( get_the_ID() ); ?>" id="post-<?php the_ID(); ?>">
-                        <?php if( has_post_thumbnail()){ ?>
-                            <a href="<?php the_permalink(); ?>" class="slsUri-thum">
-                                <?php
-                                $size = !empty(get_option('sls_article_settings')['thumb_size']) ? get_option('sls_article_settings')['thumb_size'] : 'full';
-                                the_post_thumbnail( $size, array(
-                                    'class'         =>  'slsThum-img',
-                                    'loading'       =>  'lazy'
-                                ));
-                                ?>
-                            </a>
-                            <?php
-                        } ?>
+                        <?php sls_generate_thumbnail_index(get_the_ID()); ?>
 
                         <div class="slsContent-body">
                             <div class="slsContent-meta">

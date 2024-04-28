@@ -42,15 +42,7 @@ $CatName = get_the_category_by_ID( $category_id ); ?>
 
                     <article id="post-<?php the_ID(); ?>" class="sls_grid-2-330">
                         <a href="<?php echo the_permalink(); ?>" class="dataUrl">
-                            <?php if(has_post_thumbnail()){
-                                the_post_thumbnail( 
-                                    'full',
-                                    array(
-                                        'class'     =>  'sls-imgfull mg1',
-                                        'loading'   =>  'lazy'
-                                    )
-                                );
-                            } ?>
+                            <?php generate_squar_thumnails(get_the_ID(), 'sls-imgfull mg1'); ?>
                         </a>
                         <div class="sls_grid-body">
                             <div class="sls_grid-meta">

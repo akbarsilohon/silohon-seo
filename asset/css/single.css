@@ -275,8 +275,7 @@
     }
     .sls_single-thumbnail,
     .slsContent p a img,
-    .slsContent p img,
-    .slsContent * img{
+    .slsContent p img{
         width: calc(100% + 40px);
         margin-left: -20px;
     }

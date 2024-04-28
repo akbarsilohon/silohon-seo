@@ -48,15 +48,7 @@ $i = 0; ?>
             ?>
 
             <a href="<?php echo the_permalink(); ?>" class="poBox">
-                <?php if(has_post_thumbnail()){
-                    the_post_thumbnail(
-                        'full',
-                        array(
-                            'class'     =>  'slsPo_img',
-                            'loading'   =>  'lazy'
-                        )
-                    );
-                } ?>
+                <?php generate_squar_thumnails(get_the_ID(), 'slsPo_img'); ?>
                 <div class="body_absolute">
                     <div class="absolute-meta">
                         <span class="poAuthor">By: <?php the_author(); ?></span>
@@ -78,15 +70,7 @@ $i = 0; ?>
 
                         <article id="post-<?php the_ID(); ?>" class="sls_grid-2-90" style="margin-bottom:1rem;">
                             <a href="<?php echo the_permalink(); ?>" class="dataUrl">
-                                <?php if(has_post_thumbnail()){
-                                    the_post_thumbnail(
-                                        'medium',
-                                        array(
-                                            'class'     => 'sls-imgmedium',
-                                            'loading'   =>  'lazy'
-                                        )
-                                    );
-                                } ?>
+                                <?php generate_squar_thumnails(get_the_ID(), 'sls-imgmedium'); ?>
                             </a>
                             <div class="sls_grid-body">
                                 <div class="sls_grid-meta">

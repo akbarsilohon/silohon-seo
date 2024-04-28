@@ -122,16 +122,6 @@ function sls_document_title_separator( $sep ) {
     return $sep;
 }
 
-// Check thumbnails ==========================
-// ===========================================
-function sls_check_thumbnails( $post_id ){
-    if( has_post_thumbnail( $post_id )){
-        return 'sls-with-thumbnail';
-    } else{
-        return 'sls-without-thumbnail';
-    }
-}
-
 
 // Categoty replace output ====================
 // ============================================

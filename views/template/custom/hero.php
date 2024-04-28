@@ -48,15 +48,7 @@ if(!empty($hero) && is_array($hero)){
                         $hero_query->the_post(); ?>
 
                         <li class="carousel_slide <?php if($itemActive) echo 'active'; ?>">
-                            <?php if(has_post_thumbnail()){
-                                the_post_thumbnail(
-                                    'full',
-                                    array(
-                                        'class'         =>  'carousel_img',
-                                        'loading'       =>  'lazy'
-                                    )
-                                );
-                            } ?>
+                            <?php hero_generate_img(get_the_ID()); ?>
                             <div class="carausel_body">
                                 <span class="c-meta">Post On: <?php echo the_time('F D Y') ?></span>
                                 <a href="<?php echo the_permalink(); ?>" class="carousel_link">

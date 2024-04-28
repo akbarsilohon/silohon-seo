@@ -62,21 +62,12 @@ class Sls_Widgets_Recent_Post extends WP_Widget{
                 </div>
 
                 <?php while( $recent->have_posts()){
-                    $recent->the_post();
+                    $recent->the_post(); ?>
 
-                    if( has_post_thumbnail()){ ?>
-                        <div class="asideWith_thumb">
-                            <a href="<?php echo the_permalink(); ?>" class="asideUrl">
-                                <?php the_post_thumbnail( 'large', array(
-                                    'class'         =>  'asideThumb',
-                                    'loading'       =>  'lazy'
-                                )) ?>
-                            </a>
-                        <?php
-                    } else{ ?>
-                        <div class="asideBox">
-                        <?php
-                    } ?>
+                    <div class="asideWith_thumb">
+                        <a href="<?php echo the_permalink(); ?>" class="asideUrl">
+                            <?php generate_squar_thumnails(get_the_ID(), 'asideThumb'); ?>
+                        </a>
 
                         <div class="asideBody">
                             <div class="asideMeta">
@@ -171,21 +162,12 @@ class Sls_Widget_Popular_posts extends WP_Widget{
                 </div>
 
                 <?php while( $thePopupar->have_posts()){
-                    $thePopupar->the_post();
+                    $thePopupar->the_post(); ?>
 
-                    if( has_post_thumbnail()){ ?>
-                        <div class="asideWith_thumb">
-                            <a href="<?php echo the_permalink(); ?>" class="asideUrl">
-                                <?php the_post_thumbnail( 'large', array(
-                                    'class'         =>  'asideThumb',
-                                    'loading'       =>  'lazy'
-                                )) ?>
-                            </a>
-                        <?php
-                    } else{ ?>
-                        <div class="asideBox">
-                        <?php
-                    } ?>
+                    <div class="asideWith_thumb">
+                        <a href="<?php echo the_permalink(); ?>" class="asideUrl">
+                            <?php generate_squar_thumnails(get_the_ID(), 'asideThumb'); ?>
+                        </a>
 
                         <div class="asideBody">
                             <div class="asideMeta">
