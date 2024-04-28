@@ -23,6 +23,15 @@ add_settings_field( 'art-404', 'Reirect 404 to Homepage', function(){
     echo '<input type="checkbox" name="sls_article_settings[404]" value="true" '.$conDition.' />';
 }, 'sls-single-post', 'sls-article' );
 
+// Lazyload IMG ==============================
+add_settings_field( 'art-lazyload', 'Lazy Load IMG', function(){
+    $options = get_option('sls_article_settings')['lazy_load_img'];
+    $conDition = !empty($options) && $options === 'true' ? 'checked' : '';
+
+    echo '<input type="checkbox" name="sls_article_settings[lazy_load_img]" value="true" '. $conDition .'/>';
+
+}, 'sls-single-post', 'sls-article' );
+
 
 // Thumbnails size =============================
 // =============================================

@@ -259,3 +259,62 @@ function sls_redirect_404_to_homepage(){
         exit();
     }
 }
+
+
+/**
+ * Change login logo Wordpress
+ * 
+ * @package silohon-seo
+ */
+add_action( 'login_enqueue_scripts', 'sls_logo_login_changes' );
+function sls_logo_login_changes(){
+    $siteIcon = get_site_icon_url();
+    $defIcon = SLURI . '/asset/img/site/seo-favicon.png';
+    $favicon = !empty($siteIcon) ? $siteIcon : $defIcon;
+    echo '<link rel="shortcut icon" href="'.$defIcon.'" type="image/x-icon">';
+    echo '<link rel="apple-touch-icon" href="'.$defIcon.'">';
+
+    $custonLogo = get_option( 'sls_g_settings' )['logo'];
+    $defLogo = SLURI . '/asset/img/site/logo.png';
+    $logoOutput = !empty($custonLogo) ? $custonLogo : $defLogo;
+
+    echo '<style type="text/css">
+            #login h1 a, .login h1 a {
+                background-image: url('.esc_url( $logoOutput ).');
+                height:60px;
+                width:285px;
+                background-size: 285px 60px;
+                background-repeat: no-repeat;
+            }
+        </style>';
+}
+
+
+/**
+ * Setup Lazyload Image
+ * 
+ * @package silohon-seo
+ */
+$optionLazyLoad = get_option('sls_article_settings')['lazy_load_img'];
+if(!empty($optionLazyLoad) && $optionLazyLoad === 'true' && ! is_admin()){
+    add_filter( 'the_content', 'lazy_load_conten_img' );
+    add_filter( 'widget_text', 'lazy_load_conten_img' );
+
+    add_filter( 'wp_get_attachment_image_attributes', 'silo_img_attchment_attributes', 10, 2 );
+
+    function lazy_load_conten_img( $content ){
+        $content = preg_replace( '/(<img.+)(src)/Ui', '$1data-$2', $content );
+        return $content;
+    }
+
+    function silo_img_attchment_attributes( $atts, $attachment ){
+        $atts[ 'data-src' ] = $atts[ 'src' ];
+        $atts[ 'src' ] = SLURI . '/asset/img/lazy.jpg';
+
+        if( isset( $atts[ 'srcset' ])){
+            unset( $atts[ 'srcset' ] );
+        }
+
+        return $atts;
+    }
+}

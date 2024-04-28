@@ -34,3 +34,30 @@ window.addEventListener('scroll', function() {
         document.querySelector('.sls_header').classList.remove('scrolling');
     }
 });
+
+
+
+/**
+ * Lazy Load Image
+ * 
+ * @package silohon-seo
+ */
+const images = document.querySelectorAll('[data-src]');
+
+function preloadImage(e){
+    let t = e.getAttribute('data-src');
+    t && (e.src = t);
+}
+
+const imgOptions = {
+    threshold: 0,
+    rootMargin: '0px 0px -150px 0px'
+}
+
+imgObserver = new IntersectionObserver(((e,t) => {
+    e.forEach((e => {
+        e.isIntersecting && (preloadImage(e.target), t.unobserve(e.target));
+    }));
+}), imgOptions), images.forEach((e => {
+    imgObserver.observe(e)
+}));
