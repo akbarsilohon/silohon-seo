@@ -30,7 +30,7 @@ function sls_generate_thumbnail_index( $post_id ){
 
     if(has_post_thumbnail($post_id)){
 
-        $thumbnailIndex .= '<a href="'. get_the_permalink($post_id) .'" class="slsUri-thum">';
+        $thumbnailIndex .= '<a href="'. get_the_permalink($post_id) .'" title="'. get_the_title( $post_id ) .'" class="slsUri-thum">';
         $thumbnailIndex .= get_the_post_thumbnail( $post_id, $size, array('class' => 'slsThum-img', 'loading' => 'lazy') );
         $thumbnailIndex .= '</a>';
 
@@ -40,7 +40,7 @@ function sls_generate_thumbnail_index( $post_id ){
         preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $first_img);
 
         $thumbnailIndex .= '<a href="'. get_the_permalink($post_id) .'" class="slsUri-thum">';
-        $thumbnailIndex .= '<img width="200" height="200" src="'.$first_img[1].'" class="slsThum-img" loading="lazy"/>';
+        $thumbnailIndex .= '<img width="200" height="200" src="'.$first_img[1].'" alt="'. get_the_title( $post_id ) .'" class="slsThum-img" loading="lazy"/>';
         $thumbnailIndex .= '</a>';
     }
 
@@ -72,7 +72,7 @@ function hero_generate_img($post_id){
 
         preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $heroImage);
 
-        $heroThumbnail .= '<img width="350" height="350" src="'.$heroImage[1].'" class="carousel_img" loading="lazy"/>';
+        $heroThumbnail .= '<img width="350" height="350" src="'.$heroImage[1].'" alt="'. get_the_title( $post_id ) .'" class="carousel_img" loading="lazy"/>';
     }
 
     echo $heroThumbnail;

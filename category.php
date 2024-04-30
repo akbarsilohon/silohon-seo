@@ -22,7 +22,7 @@ if(have_posts()){ ?>
             while(have_posts()){
                 the_post(); ?>
 
-                    <article class="<?php echo sls_check_thumbnails( get_the_ID() ); ?>" id="post-<?php the_ID(); ?>">
+                    <article class="<?php echo sls_check_thumbnails( get_the_ID() ); ?>" title="<?php echo the_title(); ?>" id="post-<?php the_ID(); ?>">
                         <?php sls_generate_thumbnail_index(get_the_ID()); ?>
 
                         <div class="slsContent-body">

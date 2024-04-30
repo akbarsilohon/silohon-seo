@@ -43,6 +43,12 @@ if(!empty($footerAds)){
 </footer>
 
 <?php
+
+$footerHtML = get_option('sls_hnf')['footer'];
+if(!empty($footerHtML)){
+    echo $footerHtML;
+}
+
 wp_footer(); ?>
 
 </body>

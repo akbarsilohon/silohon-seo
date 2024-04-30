@@ -51,7 +51,7 @@ if(!empty($hero) && is_array($hero)){
                             <?php hero_generate_img(get_the_ID()); ?>
                             <div class="carausel_body">
                                 <span class="c-meta">Post On: <?php echo the_time('F D Y') ?></span>
-                                <a href="<?php echo the_permalink(); ?>" class="carousel_link">
+                                <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="carousel_link">
                                     <?php echo the_title('<h2 class="carausel_title">', '</h2>'); ?>
                                 </a>
                                 <?php the_excerpt(); ?>
