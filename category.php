@@ -22,19 +22,19 @@ if(have_posts()){ ?>
             while(have_posts()){
                 the_post(); ?>
 
-                    <article class="<?php echo sls_check_thumbnails( get_the_ID() ); ?>" title="<?php echo the_title(); ?>" id="post-<?php the_ID(); ?>">
+                    <article class="<?php echo sls_check_thumbnails( get_the_ID() ); ?>" id="post-<?php the_ID(); ?>">
                         <?php sls_generate_thumbnail_index(get_the_ID()); ?>
 
                         <div class="slsContent-body">
                             <div class="slsContent-meta">
-                                <a href="<?php echo get_author_posts_url(get_the_author_ID()); ?>" class="slsCatlink">
+                                <a href="<?php echo get_author_posts_url(get_the_author_ID()); ?>" title="<?php echo get_the_author_meta( 'display_name', get_the_author_ID() ); ?>" class="slsCatlink">
                                     <?php echo get_the_author_meta( 'display_name', get_the_author_ID() ); ?>
                                 </a>
                                 <span class="sparator">/</span>
                                 <span class="slsDate"><?php the_time('d, m, Y'); ?></span>
                             </div>
 
-                            <a href="<?php echo the_permalink(); ?>" class="slsContent-heading">
+                            <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="slsContent-heading">
                                 <?php the_title( '<h2 class="slsContent-title">', '</h2>' ); ?>
                             </a>
 

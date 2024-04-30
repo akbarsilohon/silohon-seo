@@ -72,7 +72,7 @@ $i = 0; ?>
                     $i ++; ?>
 
                     <article id="post-<?php the_ID(); ?>" class="sls_grid-2-90">
-                        <a href="<?php echo the_permalink(); ?>" class="dataUrl">
+                        <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="dataUrl">
                             <?php generate_squar_thumnails(get_the_ID(), 'sls-imgmedium'); ?>
                         </a>
                         <div class="sls_grid-body">
@@ -81,7 +81,7 @@ $i = 0; ?>
                                 <span class="grid_sparat">/</span>
                                 <span class="grid_date">On: <?php echo the_time('F D Y'); ?></span>
                             </div>
-                            <a href="<?php echo the_permalink(); ?>" class="dataUri-title">
+                            <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="dataUri-title">
                                 <?php echo the_title('<h2 class="grid_title-small">', '</h2>'); ?>
                             </a>
                         </div>

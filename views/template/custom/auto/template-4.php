@@ -40,7 +40,7 @@ $CatName = get_the_category_by_ID( $category_id ); ?>
         <div class="sls_grid-2">
             <?php while($style4->have_posts()) : $style4->the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" class="sls_block" style="margin-bottom:1.5rem;">
-                    <a href="<?php echo the_permalink(); ?>" class="dataUrl">
+                    <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="dataUrl">
                         <?php generate_squar_thumnails(get_the_ID(), 'sls-imgfull'); ?>
                     </a>
                     <div class="sls_grid-body" style="margin-top:1rem;">
@@ -49,7 +49,7 @@ $CatName = get_the_category_by_ID( $category_id ); ?>
                             <span class="grid_sparat">/</span>
                             <span class="grid_date">On: <?php echo the_time('F D Y'); ?></span>
                         </div>
-                        <a href="<?php echo the_permalink(); ?>" class="dataUri-title">
+                        <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="dataUri-title">
                             <?php echo the_title('<h2 class="grid_title">', '</h2>'); ?>
                         </a>
                         <?php the_excerpt(); ?>

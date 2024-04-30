@@ -54,7 +54,7 @@
             </div>
 
             <div class="slsBrand" itemscope itemtype="http://schema.org/Organization">
-                <a itemprop="url" href="<?php echo home_url('/'); ?>" class="brandUrl">
+                <a itemprop="url" href="<?php echo home_url('/'); ?>" class="brandUrl" rel="home" title="<?php echo bloginfo( 'name' ); ?>">
                     <?php
                         $logo = !empty(get_option('sls_g_settings')['logo']) ? get_option('sls_g_settings')['logo'] : SLURI . '/asset/img/site/logo.png';
                         echo '<img itemprop="logo" class="slsLogo" src="'.$logo.'" width="80" height="60" alt="'.get_bloginfo('name').'"/>';

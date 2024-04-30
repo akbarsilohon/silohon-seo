@@ -32,7 +32,7 @@ if( have_posts()){
                 while(have_posts()){
                     the_post(); ?>
 
-                    <article class="<?php echo sls_check_thumbnails( get_the_ID() ); ?>" title="<?php echo the_title(); ?>" id="post-<?php the_ID(); ?>">
+                    <article class="<?php echo sls_check_thumbnails( get_the_ID() ); ?>" id="post-<?php the_ID(); ?>">
                         <?php sls_generate_thumbnail_index(get_the_ID()); ?>
 
                         <div class="slsContent-body">
@@ -42,7 +42,7 @@ if( have_posts()){
                                 <span class="slsDate"><?php the_time('d, m, Y'); ?></span>
                             </div>
 
-                            <a href="<?php echo the_permalink(); ?>" class="slsContent-heading">
+                            <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="slsContent-heading">
                                 <?php the_title( '<h2 class="slsContent-title">', '</h2>' ); ?>
                             </a>
 
