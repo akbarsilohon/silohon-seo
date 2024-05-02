@@ -63,7 +63,7 @@ function hero_generate_img($post_id){
     if(has_post_thumbnail( $post_id )){
         $heroThumbnail .= get_the_post_thumbnail( $post_id, $size, array(
                 'class'         =>  'carousel_img',
-                'loading'       =>  'lazy'
+                'loading'       =>  'eager'
             )
         );
     } else{
@@ -72,7 +72,7 @@ function hero_generate_img($post_id){
 
         preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $heroImage);
 
-        $heroThumbnail .= '<img width="350" height="350" src="'.$heroImage[1].'" alt="'. get_the_title( $post_id ) .'" class="carousel_img" loading="lazy"/>';
+        $heroThumbnail .= '<img width="350" height="350" src="'.$heroImage[1].'" alt="'. get_the_title( $post_id ) .'" class="carousel_img" loading="eager"/>';
     }
 
     echo $heroThumbnail;
@@ -102,7 +102,7 @@ function generate_squar_thumnails($post_id, $class){
         $squar = '';
         preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $squar);
 
-        $thumbnailSquard .= '<img width="200" height="200" src="'.$squar[1].'" class="'.$class.'" loading="lazy"/>';
+        $thumbnailSquard .= '<img width="200" height="200" src="'.$squar[1].'" alt="'. get_the_title( $post_id ) .'" class="'.$class.'" loading="lazy"/>';
     }
 
     echo $thumbnailSquard;

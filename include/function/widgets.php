@@ -65,7 +65,7 @@ class Sls_Widgets_Recent_Post extends WP_Widget{
                     $recent->the_post(); ?>
 
                     <div class="asideWith_thumb">
-                        <a href="<?php echo the_permalink(); ?>" class="asideUrl">
+                        <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="asideUrl">
                             <?php generate_squar_thumnails(get_the_ID(), 'asideThumb'); ?>
                         </a>
 
@@ -75,7 +75,7 @@ class Sls_Widgets_Recent_Post extends WP_Widget{
                                 <span class="sparat">/</span>
                                 <span class="datime"><?php echo the_time('F D Y') ?></span>
                             </div>
-                            <a href="<?php echo the_permalink(); ?>" class="titSid">
+                            <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="titSid">
                                 <?php echo the_title('<h3>', '</h3>'); ?>
                             </a>
                         </div>
@@ -165,7 +165,7 @@ class Sls_Widget_Popular_posts extends WP_Widget{
                     $thePopupar->the_post(); ?>
 
                     <div class="asideWith_thumb">
-                        <a href="<?php echo the_permalink(); ?>" class="asideUrl">
+                        <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="asideUrl">
                             <?php generate_squar_thumnails(get_the_ID(), 'asideThumb'); ?>
                         </a>
 
@@ -175,7 +175,7 @@ class Sls_Widget_Popular_posts extends WP_Widget{
                                 <span class="sparat">/</span>
                                 <span class="datime"><?php echo the_time('F D Y') ?></span>
                             </div>
-                            <a href="<?php echo the_permalink(); ?>" class="titSid">
+                            <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" class="titSid">
                                 <?php echo the_title('<h3>', '</h3>'); ?>
                             </a>
                         </div>

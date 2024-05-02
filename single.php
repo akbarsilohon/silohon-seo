@@ -23,10 +23,7 @@ get_header(); ?>
                 <?php the_title('<h2 class="slsHeading" itemprop="headline">', '</h2>'); ?>
 
                 <!-- Meta SEO -->
-                <meta itemprop="image" content="<?php echo get_the_post_thumbnail_url( null, 'thumbnail' ) ?>" />
-                <meta itemprop="image" content="<?php echo get_the_post_thumbnail_url( null, 'medium' ) ?>" />
-                <meta itemprop="image" content="<?php echo get_the_post_thumbnail_url( null, 'large' ) ?>" />
-                <meta itemprop="image" content="<?php echo get_the_post_thumbnail_url( null, 'full' ) ?>" />
+                <?php  sls_generate_meta_img_single( get_the_ID() ); ?>
                 <meta itemprop="datePublished" content="<?php the_time('c'); ?>">
                 <meta itemprop="dateModified" content="<?php the_modified_date('c'); ?>">
 

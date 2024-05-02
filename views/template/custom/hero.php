@@ -64,17 +64,6 @@ if(!empty($hero) && is_array($hero)){
                 </ul>
             </div>
             <button class="carousel_button right">&#8594;</button>
-
-            <div class="carousel_nav">
-                <?php
-                    $buttonActive = true;
-                    while($hero_query->have_posts()){
-                    $hero_query->the_post(); ?>
-                    <button class="carousel_indicator <?php if($buttonActive) echo 'active'; ?>"></button>
-                    <?php
-                    $buttonActive = false;
-                } ?>
-            </div>
         </section>
 
         <script>

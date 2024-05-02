@@ -187,7 +187,8 @@ function sls_add_excerpt_class() {
 add_filter( 'excerpt_more', 'sls_excerpt_more' );
 function sls_excerpt_more( $more ){
     $excerptMore = !empty(get_option('sls_article_settings')['excertpt-more']) ? get_option('sls_article_settings')['excertpt-more'] : 'Read More';
-    return sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+    return sprintf(
+        '<a href="%1$s" title="'. get_the_title(get_the_ID()).'" class="more-link">%2$s <span style="display:none;">'. get_the_title(get_the_ID()) .'</span></a>',
         esc_url( get_permalink( get_the_ID() ) ),
         $excerptMore
     );
@@ -307,4 +308,28 @@ if(!empty($optionLazyLoad) && $optionLazyLoad === 'true' && ! is_admin()){
 
         return $atts;
     }
+}
+
+
+// Generate Meta IMG Single posts
+function sls_generate_meta_img_single($id){
+    $thumbnail = null;
+
+    if(has_post_thumbnail($id)){
+        $thumbnail .= '<meta itemprop="image" content="'. esc_url( get_the_post_thumbnail_url( $id, 'thumbnail' )) .'" />';
+        $thumbnail .= '<meta itemprop="image" content="'. esc_url( get_the_post_thumbnail_url( $id, 'medium' )) .'" />';
+        $thumbnail .= '<meta itemprop="image" content="'. esc_url( get_the_post_thumbnail_url( $id, 'large' )) .'" />';
+        $thumbnail .= '<meta itemprop="image" content="'. esc_url( get_the_post_thumbnail_url( $id, 'full' )) .'" />';
+    } else{
+        $getContent = get_the_content( null, false, $id );
+        $item = '';
+
+        preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $getContent, $item);
+
+        if(!empty($item[1])){
+            $thumbnail .= '<meta itemprop="image" content="'. esc_url( $item[1] ) .'" />';
+        }
+    }
+
+    echo $thumbnail;
 }
