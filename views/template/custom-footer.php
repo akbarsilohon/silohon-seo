@@ -5,6 +5,14 @@
     </footer>
 
     <script src="<?php echo SLURI . '/asset/js/search.js'; ?>"></script>
-    <?php wp_footer(); ?>
+    <?php 
+    
+    $footerHtML = get_option('sls_hnf')['footer'];
+    if(!empty($footerHtML)){
+        echo $footerHtML;
+    }
+    
+    
+    wp_footer(); ?>
 </body>
 </html>
